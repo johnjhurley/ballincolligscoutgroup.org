@@ -1,1 +1,2 @@
 document.querySelector('.menu-toggle')?.addEventListener('click',()=>document.querySelector('.nav').classList.toggle('open'));
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.calendar tr[data-type]').forEach(r=>r.style.display=(f==='all'||r.dataset.type===f)?'table-row':'none')}));

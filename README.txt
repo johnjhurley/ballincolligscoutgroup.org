@@ -1,6 +1,5 @@
 49th Cork Ballincollig Scout Group website
 
-Upload all files and folders to the root of the GitHub Pages repository.
-Main stylesheet: assets/css/style.css
-Main JavaScript: assets/js/site.js
-Images: assets/images/
+Willington-inspired redesign. Static HTML/CSS/JS for GitHub Pages.
+
+New: calendar.html, filtered programme table, refreshed navigation, contact form, responsive layout.
