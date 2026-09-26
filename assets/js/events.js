@@ -11,7 +11,7 @@ window.groupEvents = [
         date: "2026-10-17",
         endDate: "2026-10-18",
         title: "JOTA / JOTI",
-        type: "County",
+        type: "County - Beavers/Cubs/Scouts",
         location: "Kilcully Scout Campsite",
         description: "Jamboree on the Air / Jamboree on the Internet"
     },
@@ -20,14 +20,14 @@ window.groupEvents = [
         endDate: "2026-10-22",
         title: "Group AGM",
         type: "Group",
-        location: "Ballincollig",
+        location: "Ballincollig Scouters",
         description: "49th Cork AGM"
     },
     {
         date: "2026-11-01",
         endDate: "2026-11-01",
         title: "Lee Valley Hike",
-        type: "County",
+        type: "County - Beavers/Cubs/Scouts",
         location: "TBC",
         description: "Lee Valley County Hike."
     },
@@ -43,8 +43,24 @@ window.groupEvents = [
         date: "2027-01-17",
         endDate: "2027-01-17",
         title: "Lee Valley County Quiz",
-        type: "County",
+        type: "County - Cubs",
         location: "Blarney",
         description: "County quiz hosted in Blarney."
+    },
+    {
+        date: "2027-06-04",
+        endDate: "2027-06-07",
+        title: "JamÓige 2027",
+        type: "County - Cubs",
+        location: "Pallaskenry, Co. Limerick",
+        description: "Jamanji themed Cub Summer Camp"
+    },
+    {
+        date: "2027-06-05",
+        endDate: "2027-06-07",
+        title: "JamÓige 2027",
+        type: "County - Beavers",
+        location: "Pallaskenry, Co. Limerick",
+        description: "Jamanji themed Beaver Summer Camp"
     }
 ];
