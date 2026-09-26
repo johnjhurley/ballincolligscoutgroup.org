@@ -445,7 +445,7 @@ img {
     min-height: 150px;
 
     display: grid;
-    grid-template-columns: 105px 90px 1fr auto;
+    grid-template-columns: 125px 125px 1fr auto;
     align-items: center;
     gap: 24px;
 }
@@ -463,7 +463,9 @@ img {
 }
 
 .date-box {
+    min-width: 125px;
     padding-left: 24px;
+    padding-right: 15px;
 
     border-left: 1px solid rgba(255,255,255,.45);
 }
@@ -473,14 +475,20 @@ img {
 
     color: #fff;
 
-    font-size: 39px;
+    font-size: 36px;
     line-height: 1;
-    letter-spacing: -.06em;
+    letter-spacing: -.04em;
+    white-space: nowrap;
 }
 
 .date-box span {
+    display: block;
+    margin-top: 5px;
+
     color: rgba(255,255,255,.8);
+
     font-size: 12px;
+    white-space: nowrap;
 }
 
 .up-copy h2 {
@@ -1382,7 +1390,7 @@ img {
     /* Up next */
 
     .up-grid {
-        grid-template-columns: 80px 80px 1fr;
+        grid-template-columns: 110px 120px 1fr;
     }
 
     .up-grid > .arrow-link {
