@@ -33,10 +33,19 @@ document.addEventListener('click',e=>{
 
     // Find future events and sort by date
     const upcoming = window.groupEvents
-        .filter(event => {
-            const eventDate = new Date(event.date + "T00:00:00");
-            return eventDate >= today;
-        })
+    .filter(event => {
+
+        const startDate =
+            new Date(event.date + "T00:00:00");
+
+        const endDate =
+            event.endDate
+                ? new Date(event.endDate + "T23:59:59")
+                : startDate;
+
+        // Include the event while it is still running
+        return endDate >= today;
+    })
         .sort((a, b) => {
             return new Date(a.date) - new Date(b.date);
         });
@@ -59,16 +68,33 @@ document.addEventListener('click',e=>{
     }
 
     const event = upcoming[0];
+    const endDate = event.endDate
+    ? new Date(event.endDate + "T23:59:59")
+    : date;
+
+    const isHappeningNow =
+        date < today && endDate >= today;
 
     const date = new Date(event.date + "T00:00:00");
 
-    const day = date.getDate();
+    let day;
+    let month;
 
-    const month = date
-        .toLocaleDateString("en-IE", {
-            month: "short"
-        })
-        .toUpperCase();
+    if (isHappeningNow) {
+
+        day = "NOW";
+        month = "ON NOW";
+
+    } else {
+
+        day = date.getDate();
+
+        month = date
+            .toLocaleDateString("en-IE", {
+                month: "short"
+            })
+            .toUpperCase();
+    }
 
     container.innerHTML = `
         <div class="up-label">
