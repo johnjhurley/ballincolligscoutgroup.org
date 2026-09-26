@@ -16,69 +16,122 @@ document.addEventListener('click',e=>{
 });
 
 /* =========================================================
-   UP NEXT
+   HOMEPAGE - UP NEXT
    ========================================================= */
 
 (function () {
 
     const container = document.getElementById("upNext");
 
-    if (!container || !window.groupEvents) {
+    // Only run on pages containing Up Next
+    if (!container) {
         return;
     }
 
-    // Today at midnight
+    if (!Array.isArray(window.groupEvents)) {
+        console.error("groupEvents not found. Check events.js is loaded.");
+        return;
+    }
+
+
+    /* -----------------------------------------------------
+       Today
+       ----------------------------------------------------- */
+
     const today = new Date();
+
     today.setHours(0, 0, 0, 0);
 
-    // Find future events and sort by date
+
+    /* -----------------------------------------------------
+       Find events which have not finished
+       ----------------------------------------------------- */
+
     const upcoming = window.groupEvents
-    .filter(event => {
+        .filter(event => {
 
-        const startDate =
-            new Date(event.date + "T00:00:00");
+            const startDate =
+                new Date(event.date + "T00:00:00");
 
-        const endDate =
-            event.endDate
-                ? new Date(event.endDate + "T23:59:59")
-                : startDate;
+            const endDate =
+                event.endDate
+                    ? new Date(event.endDate + "T23:59:59")
+                    : new Date(event.date + "T23:59:59");
 
-        // Include the event while it is still running
-        return endDate >= today;
-    })
+
+            return endDate >= today;
+
+        })
         .sort((a, b) => {
-            return new Date(a.date) - new Date(b.date);
+
+            return (
+                new Date(a.date + "T00:00:00") -
+                new Date(b.date + "T00:00:00")
+            );
+
         });
 
+
+    /* -----------------------------------------------------
+       No upcoming events
+       ----------------------------------------------------- */
+
     if (!upcoming.length) {
+
         container.innerHTML = `
-            <div class="up-label">Up Next</div>
+            <div class="up-label">
+                Up Next
+            </div>
 
             <div class="up-copy">
                 <h2>More adventures coming soon</h2>
-                <p>Check back for upcoming Group events.</p>
+                <p>Check the calendar for upcoming activities.</p>
             </div>
 
-            <a class="arrow-link" href="calendar.html">
-                View calendar →
+            <a class="arrow-link"
+               href="calendar.html">
+                View Calendar →
             </a>
         `;
 
         return;
     }
 
+
+    /* -----------------------------------------------------
+       Next event
+       ----------------------------------------------------- */
+
     const event = upcoming[0];
-    const endDate = event.endDate
-    ? new Date(event.endDate + "T23:59:59")
-    : date;
+
+
+    const startDate =
+        new Date(event.date + "T00:00:00");
+
+
+    const endDate =
+        event.endDate
+            ? new Date(event.endDate + "T23:59:59")
+            : new Date(event.date + "T23:59:59");
+
+
+    /*
+     * Event started before today and
+     * has not yet finished.
+     */
 
     const isHappeningNow =
-        date < today && endDate >= today;
+        startDate < today &&
+        endDate >= today;
 
-    const date = new Date(event.date + "T00:00:00");
+
+    /* -----------------------------------------------------
+       Date display
+       ----------------------------------------------------- */
 
     let day;
     let month;
+
 
     if (isHappeningNow) {
 
@@ -87,36 +140,80 @@ document.addEventListener('click',e=>{
 
     } else {
 
-        day = date.getDate();
+        day = startDate.getDate();
 
-        month = date
-            .toLocaleDateString("en-IE", {
-                month: "short"
-            })
+        month = startDate
+            .toLocaleDateString(
+                "en-IE",
+                {
+                    month: "short"
+                }
+            )
             .toUpperCase();
+
     }
 
+
+    /* -----------------------------------------------------
+       Description
+       ----------------------------------------------------- */
+
+    let details = "";
+
+
+    if (event.description) {
+        details += event.description;
+    }
+
+
+    if (event.location) {
+
+        if (details) {
+            details += " · ";
+        }
+
+        details += event.location;
+
+    }
+
+
+    /* -----------------------------------------------------
+       Render
+       ----------------------------------------------------- */
+
     container.innerHTML = `
+
         <div class="up-label">
-            Up Next
+            ${isHappeningNow ? "Happening Now" : "Up Next"}
         </div>
 
         <div class="date-box">
+
             <b>${day}</b>
-            <span>${month}</span>
+
+            <span>
+                ${month}
+            </span>
+
         </div>
 
         <div class="up-copy">
-            <h2>${event.title}</h2>
+
+            <h2>
+                ${event.title}
+            </h2>
+
             <p>
-                ${event.description || ""}
-                ${event.location ? " · " + event.location : ""}
+                ${details}
             </p>
+
         </div>
 
-        <a class="arrow-link" href="calendar.html">
-            View calendar →
+        <a class="arrow-link"
+           href="calendar.html">
+            View Calendar →
         </a>
+
     `;
 
 })();
