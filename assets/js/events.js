@@ -1,6 +1,6 @@
 window.groupEvents = [
     {
-        date: "2026-10-25",
+        date: "2026-10-27",
         title: "The Venture Work Weekend",
         type: "Group - Ventures",
         location: "Lough Dan Scout & Eco Centre",
