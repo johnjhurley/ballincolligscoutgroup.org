@@ -35,7 +35,7 @@ window.groupEvents = [
         date: "2026-12-05",
         endDate: "2026-12-05",
         title: "County Panto",
-        type: "County",
+        type: "County - Beavers/Cubs",
         location: "TBC",
         description: "County Panto at 11:00."
     },
