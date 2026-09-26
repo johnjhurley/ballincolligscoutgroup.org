@@ -9,10 +9,10 @@ window.groupEvents = [
     },
     {
         date: "2026-10-17",
-        endDate: "2026-10-19",
+        endDate: "2026-10-18",
         title: "JOTA / JOTI",
         type: "County",
-        location: "Ballincollig",
+        location: "Kilcully Scout Campsite",
         description: "Jamboree on the Air / Jamboree on the Internet"
     },
     {
