@@ -1,11 +1,686 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calendar | 49th Cork Ballincollig Scout Group</title><meta name="description" content="49th Cork Ballincollig Scout Group"><link rel="stylesheet" href="assets/css/style.css"><link rel="icon" type="image/png" href="assets/images/logo.png">
-<link rel="apple-touch-icon" href="assets/images/logo.png"></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/images/logo.png" alt="49th Cork logo"><span><strong>49th Cork</strong><small>Ballincollig Scout Group</small></span></a><button class="menu-toggle" aria-label="Open menu">☰</button><nav class="nav"><a class="" href="index.html">Home</a><a class="" href="about.html">About</a><div class="nav-sections"><button class="sections-toggle" type="button" aria-expanded="false">Sections <span aria-hidden="true">▾</span></button><div class="sections-menu"><a href="beavers.html">Beavers</a><a href="cubs.html">Cubs</a><a href="scouts.html">Scouts</a><a href="ventures.html">Ventures</a></div></div><a class="" href="events.html">News</a><a class="active" href="calendar.html">Calendar</a><a class="" href="parents.html">Parent Hub</a><a class="" href="contact.html">Contact</a><a class="nav-join" href="join.html">Join Us</a></nav></div></header><section class="page-hero"><div class="container"><p class="kicker">Member information</p><h1>Group Calendar — 2026/2027</h1><p>Key Group and Lee Valley County dates for the Scouting year. Details marked TBC will be updated when confirmed.</p></div></section><main class="content"><div class="container"><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="county">County</button><button class="filter" data-filter="group">Group</button><button class="filter" data-filter="training">Training</button></div><div class="calendar-wrap"><table class="calendar"><thead><tr><th>Date</th><th>Event</th><th>Type</th><th>Location</th></tr></thead><tbody>
-<tr class="month"><td colspan="4">October 2026</td></tr><tr data-type="group"><td>Sat 17 Oct</td><td><strong>JOTA / JOTI</strong></td><td><span class="tag">Group</span></td><td>Details TBC</td></tr>
-<tr class="month"><td colspan="4">November 2026</td></tr><tr data-type="county"><td>Sun 1 Nov</td><td><strong>Lee Valley Hike</strong></td><td><span class="tag">County</span></td><td>TBC</td></tr>
-<tr class="month"><td colspan="4">December 2026</td></tr><tr data-type="county"><td>Sat 5 Dec · 11:00</td><td><strong>County Panto</strong></td><td><span class="tag">County</span></td><td>TBC</td></tr><tr data-type="group"><td>Sat 12 Dec</td><td><strong>Group date</strong></td><td><span class="tag">Group</span></td><td>Details TBC</td></tr>
-<tr class="month"><td colspan="4">January 2027</td></tr><tr data-type="county"><td>Sun 17 Jan</td><td><strong>Lee Valley County Quiz</strong></td><td><span class="tag">County</span></td><td>Blarney</td></tr>
-<tr class="month"><td colspan="4">February 2027</td></tr><tr data-type="training"><td>Sat 20 Feb</td><td><strong>Sixer / Seconder Training Day</strong></td><td><span class="tag">Training</span></td><td>Venue TBC</td></tr>
-<tr class="month"><td colspan="4">March 2027</td></tr><tr data-type="county"><td>Sun 14 Mar</td><td><strong>Urban Challenge</strong></td><td><span class="tag">County</span></td><td>Venue TBC</td></tr>
-<tr class="month"><td colspan="4">April 2027</td></tr><tr data-type="county"><td>Sat 3 Apr</td><td><strong>Hey Jinks</strong></td><td><span class="tag">County</span></td><td>Farran Woods · TBC</td></tr><tr data-type="county"><td>Sat 17 Apr</td><td><strong>Lee Valley Cub Challenge Qualifier</strong></td><td><span class="tag">County</span></td><td>Kilcully</td></tr>
-<tr class="month"><td colspan="4">June 2027</td></tr><tr data-type="county"><td>Fri 4 Jun</td><td><strong>Jamoige</strong></td><td><span class="tag">County</span></td><td>Palliskenry</td></tr>
-</tbody></table></div></div></main><footer class="footer"><div class="container footer-grid"><div><div class="footer-brand"><img src="assets/images/logo.png" alt="49th Cork logo"><div><h4>49th Cork Ballincollig</h4><p>Adventure, friendship and skills for life.</p></div></div></div><div><h4>Find us</h4><p>Scout Hall, Station Road<br>Ballincollig, Co. Cork<br>P31 EK76</p></div><div><h4>Explore</h4><p><a href="calendar.html">Group Calendar</a><br><a href="events.html">News</a><br><a href="parents.html">Parent Hub</a><br><a href="join.html">Join Us</a><br><a href="https://www.instagram.com/49th.ballincollig.scout.group/">Instagram</a></p></div></div><div class="container footer-bottom">© 49th Cork Ballincollig Scout Group · Scouting in Ballincollig since 1975</div></footer><script src="assets/js/site.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Calendar | 49th Cork Ballincollig Scout Group</title>
+
+    <meta name="description"
+          content="Group and Lee Valley County calendar for 49th Cork Ballincollig Scout Group.">
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+
+    <link rel="icon"
+          type="image/png"
+          href="assets/images/logo.png">
+
+    <link rel="apple-touch-icon"
+          href="assets/images/logo.png">
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="site-header">
+
+    <div class="container nav-wrap">
+
+        <a class="brand" href="index.html">
+
+            <img src="assets/images/logo.png"
+                 alt="49th Cork logo">
+
+            <span>
+                <strong>49th Cork</strong>
+                <small>Ballincollig Scout Group</small>
+            </span>
+
+        </a>
+
+
+        <button class="menu-toggle"
+                aria-label="Open menu">
+            ☰
+        </button>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+
+            <!-- Sections dropdown -->
+
+            <div class="nav-sections">
+
+                <button class="sections-toggle"
+                        type="button"
+                        aria-expanded="false">
+
+                    Sections
+                    <span aria-hidden="true">▾</span>
+
+                </button>
+
+
+                <div class="sections-menu">
+
+                    <a href="beavers.html">
+                        Beavers
+                    </a>
+
+                    <a href="cubs.html">
+                        Cubs
+                    </a>
+
+                    <a href="scouts.html">
+                        Scouts
+                    </a>
+
+                    <a href="ventures.html">
+                        Ventures
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a href="events.html">
+                News
+            </a>
+
+            <a class="active"
+               href="calendar.html">
+                Calendar
+            </a>
+
+            <a href="parents.html">
+                Parent Hub
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a class="nav-join"
+               href="join.html">
+                Join Us
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE HERO
+     ===================================================== -->
+
+<section class="page-hero">
+
+    <div class="container">
+
+        <p class="kicker">
+            Member information
+        </p>
+
+        <h1>
+            Group Calendar
+        </h1>
+
+        <p>
+            Key Group and Lee Valley County dates for the
+            Scouting year. Details marked TBC will be updated
+            when confirmed.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CALENDAR
+     ===================================================== -->
+
+<main class="content">
+
+    <div class="container">
+
+
+        <!-- Filters -->
+
+        <div class="filters">
+
+            <button class="filter active"
+                    type="button"
+                    data-filter="all">
+                All
+            </button>
+
+            <button class="filter"
+                    type="button"
+                    data-filter="county">
+                County
+            </button>
+
+            <button class="filter"
+                    type="button"
+                    data-filter="group">
+                Group
+            </button>
+
+            <button class="filter"
+                    type="button"
+                    data-filter="training">
+                Training
+            </button>
+
+        </div>
+
+
+
+        <!-- Calendar -->
+
+        <div class="calendar-wrap">
+
+            <table class="calendar">
+
+                <thead>
+
+                    <tr>
+                        <th>Date</th>
+                        <th>Event</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="calendarBody">
+
+                    <!--
+                        Events are generated automatically
+                        from assets/js/events.js
+                    -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Message displayed if no events exist -->
+
+        <div id="noEvents"
+             style="display:none;">
+
+            <p>
+                No upcoming events are currently listed.
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <div class="footer-brand">
+
+                <img src="assets/images/logo.png"
+                     alt="49th Cork logo">
+
+                <div>
+
+                    <h4>
+                        49th Cork Ballincollig
+                    </h4>
+
+                    <p>
+                        Adventure, friendship and skills for life.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Find us
+            </h4>
+
+            <p>
+                Scout Hall, Station Road<br>
+                Ballincollig, Co. Cork<br>
+                P31 EK76
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Explore
+            </h4>
+
+            <p>
+
+                <a href="calendar.html">
+                    Group Calendar
+                </a>
+
+                <br>
+
+                <a href="events.html">
+                    News
+                </a>
+
+                <br>
+
+                <a href="parents.html">
+                    Parent Hub
+                </a>
+
+                <br>
+
+                <a href="join.html">
+                    Join Us
+                </a>
+
+                <br>
+
+                <a href="https://www.instagram.com/49th.ballincollig.scout.group/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+                <br>
+
+                <a href="https://www.facebook.com/ballincollig.scout"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Facebook
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        © 49th Cork Ballincollig Scout Group ·
+        Scouting in Ballincollig since 1975
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+
+     events.js MUST load before site.js
+     ===================================================== -->
+
+<script src="assets/js/events.js"></script>
+
+<script src="assets/js/site.js"></script>
+
+
+
+<!-- =====================================================
+     DYNAMIC CALENDAR
+     ===================================================== -->
+
+<script>
+
+(function () {
+
+    const calendarBody =
+        document.getElementById("calendarBody");
+
+    const noEvents =
+        document.getElementById("noEvents");
+
+    const filterButtons =
+        document.querySelectorAll(".filter");
+
+
+    if (!calendarBody) {
+        return;
+    }
+
+
+    /* -----------------------------------------------------
+       Get events
+       ----------------------------------------------------- */
+
+    const events = Array.isArray(window.groupEvents)
+        ? [...window.groupEvents]
+        : [];
+
+
+    /* -----------------------------------------------------
+       Sort events by date
+       ----------------------------------------------------- */
+
+    events.sort((a, b) =>
+        new Date(a.date + "T00:00:00") -
+        new Date(b.date + "T00:00:00")
+    );
+
+
+    /* -----------------------------------------------------
+       Render calendar
+       ----------------------------------------------------- */
+
+    function renderCalendar(filter = "all") {
+
+        calendarBody.innerHTML = "";
+
+        let currentMonth = "";
+
+        let displayedEvents = 0;
+
+
+        events.forEach(event => {
+
+            const eventType =
+                (event.type || "Group").toLowerCase();
+
+
+            /*
+             * Apply selected filter
+             */
+
+            if (
+                filter !== "all" &&
+                eventType !== filter
+            ) {
+                return;
+            }
+
+
+            const date =
+                new Date(event.date + "T00:00:00");
+
+
+            if (Number.isNaN(date.getTime())) {
+                return;
+            }
+
+
+            displayedEvents++;
+
+
+            /* ---------------------------------------------
+               Month heading
+               --------------------------------------------- */
+
+            const monthHeading =
+                date.toLocaleDateString(
+                    "en-IE",
+                    {
+                        month: "long",
+                        year: "numeric"
+                    }
+                );
+
+
+            if (monthHeading !== currentMonth) {
+
+                const monthRow =
+                    document.createElement("tr");
+
+                monthRow.className = "month";
+
+
+                const monthCell =
+                    document.createElement("td");
+
+                monthCell.colSpan = 4;
+                monthCell.textContent = monthHeading;
+
+
+                monthRow.appendChild(monthCell);
+
+                calendarBody.appendChild(monthRow);
+
+
+                currentMonth = monthHeading;
+            }
+
+
+            /* ---------------------------------------------
+               Date
+               --------------------------------------------- */
+
+            let displayDate =
+                date.toLocaleDateString(
+                    "en-IE",
+                    {
+                        weekday: "short",
+                        day: "numeric",
+                        month: "short"
+                    }
+                );
+
+
+            if (event.time) {
+
+                displayDate +=
+                    " · " + event.time;
+
+            }
+
+
+            /* ---------------------------------------------
+               Event row
+               --------------------------------------------- */
+
+            const row =
+                document.createElement("tr");
+
+
+            row.dataset.type = eventType;
+
+
+
+            /* Date */
+
+            const dateCell =
+                document.createElement("td");
+
+            dateCell.textContent =
+                displayDate;
+
+
+
+            /* Event */
+
+            const eventCell =
+                document.createElement("td");
+
+
+            const title =
+                document.createElement("strong");
+
+            title.textContent =
+                event.title || "Event";
+
+
+            eventCell.appendChild(title);
+
+
+            /*
+             * Optional description
+             */
+
+            if (event.description) {
+
+                const description =
+                    document.createElement("div");
+
+                description.className =
+                    "event-description";
+
+                description.textContent =
+                    event.description;
+
+                eventCell.appendChild(description);
+
+            }
+
+
+
+            /* Type */
+
+            const typeCell =
+                document.createElement("td");
+
+
+            const tag =
+                document.createElement("span");
+
+            tag.className = "tag";
+
+            tag.textContent =
+                event.type || "Group";
+
+
+            typeCell.appendChild(tag);
+
+
+
+            /* Location */
+
+            const locationCell =
+                document.createElement("td");
+
+            locationCell.textContent =
+                event.location || "TBC";
+
+
+
+            /* Add cells */
+
+            row.appendChild(dateCell);
+            row.appendChild(eventCell);
+            row.appendChild(typeCell);
+            row.appendChild(locationCell);
+
+
+            calendarBody.appendChild(row);
+
+        });
+
+
+
+        /* ---------------------------------------------
+           No events
+           --------------------------------------------- */
+
+        if (noEvents) {
+
+            noEvents.style.display =
+                displayedEvents === 0
+                    ? "block"
+                    : "none";
+
+        }
+
+    }
+
+
+
+    /* -----------------------------------------------------
+       Filters
+       ----------------------------------------------------- */
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                filterButtons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+
+                this.classList.add("active");
+
+
+                renderCalendar(
+                    this.dataset.filter
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* -----------------------------------------------------
+       Initial calendar
+       ----------------------------------------------------- */
+
+    renderCalendar("all");
+
+})();
+
+</script>
+
+
+</body>
+
+</html>
