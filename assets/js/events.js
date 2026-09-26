@@ -1,17 +1,31 @@
 window.groupEvents = [
     {
+        date: "2026-10-25",
+        title: "The Venture Work Weekend",
+        type: "Group - Ventures",
+        location: "Lough Dan Scout & Eco Centre",
+        description: "Venture Work Weekend"
+    },
+    {
         date: "2026-10-17",
         title: "JOTA / JOTI",
-        type: "Group",
+        type: "County",
         location: "Ballincollig",
         description: "Jamboree on the Air / Jamboree on the Internet"
+    },
+    {
+        date: "2026-10-22",
+        title: "Group AGM",
+        type: "Group",
+        location: "Ballincollig",
+        description: "49th Cork AGM"
     },
     {
         date: "2026-11-01",
         title: "Lee Valley Hike",
         type: "County",
         location: "TBC",
-        description: "Lee Valley county hike."
+        description: "Lee Valley County Hike."
     },
     {
         date: "2026-12-05",
