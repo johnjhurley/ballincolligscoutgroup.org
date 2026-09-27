@@ -20,7 +20,7 @@ window.groupEvents = [
         endDate: "2026-10-22",
         title: "Group AGM",
         type: "Group",
-        location: "Ballincollig Scouters",
+        location: "Ballincollig Scout Hall",
         description: "49th Cork AGM"
     },
     {
