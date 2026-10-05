@@ -735,9 +735,10 @@ img {
 
 .section-card img {
     width: 100%;
-    height: 240px;
-    object-fit: cover;
-    object-position: center center;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    object-position: center;
     display: block;
 }
 
