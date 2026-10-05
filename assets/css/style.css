@@ -716,30 +716,61 @@ img {
    SECTION CARDS
    ========================================================= */
 
-.section-card {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 4 / 3;
-    background: #fff;
+.section-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
-.section-card img {
-    position: absolute;
-    top: 14px;
-    left: 20px;
+.section-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
 
-    width: calc(100% - 40px);
-    height: calc(100% - 28px);
+/* Section logo */
+.section-card img {
+    width: calc(100% - 24px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    margin: 12px;
 
     object-fit: contain;
     object-position: center;
-    display: block;
 
+    display: block;
     transition: transform .3s;
 }
 
 .section-card:hover img {
     transform: scale(1.03);
+}
+
+/* Text below logo */
+.section-card div {
+    position: static;
+    padding: 8px 12px 18px;
+}
+
+.section-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.section-card h3 {
+    margin: 4px 0 0;
+    color: var(--ink);
+    font-size: 27px;
+    letter-spacing: -.04em;
+}
+
+/* Remove old dark photo overlay */
+.section-card::after {
+    display: none;
 }
 
 
