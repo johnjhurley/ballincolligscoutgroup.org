@@ -723,16 +723,20 @@ img {
 }
 
 .section-card {
+    display: flex;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 1 / 1;
+    padding: 18px;
 }
 
-/* Logo slightly smaller than card */
+/* Logo */
 .section-card img {
-    width: 88%;
-    height: 88%;
-    margin: 6%;
+    width: 75%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    margin: 0 auto 12px;
 
     object-fit: contain;
     object-position: center;
@@ -745,33 +749,28 @@ img {
     transform: scale(1.03);
 }
 
-/* Text OVER the logo - top left */
+/* Text below logo */
 .section-card div {
-    position: absolute;
-    z-index: 2;
-    top: 24px;
-    left: 28px;
-    bottom: auto;
+    position: static;
+    padding: 0;
 }
 
 .section-card small {
     display: block;
-    color: #fff;
+    color: var(--muted);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .08em;
-    text-shadow: 0 1px 4px rgba(0,0,0,.7);
 }
 
 .section-card h3 {
     margin: 3px 0 0;
-    color: #fff;
+    color: var(--ink);
     font-size: 25px;
     letter-spacing: -.04em;
-    text-shadow: 0 1px 5px rgba(0,0,0,.7);
 }
 
-/* Don't use the old full-card gradient */
+/* Remove old photo overlay */
 .section-card::after {
     display: none;
 }
