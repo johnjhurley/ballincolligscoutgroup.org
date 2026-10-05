@@ -8,6 +8,14 @@ window.groupEvents = [
         description: "Venture Work Weekend"
     },
     {
+        date: "2026-10-02",
+        endDate: "2026-10-04",
+        title: "Mountain Havoc Ulster",
+        type: "Ventures",
+        location: "Mourne Mountains, Northern Ireland",
+        description: "Mountain Havoc is a 3-day adventure challenge for Venture Scouts. Teams of 4-6 will navigate through the Mourne Mountains, completing various challenges along the way."
+    },
+    {
         date: "2026-10-17",
         endDate: "2026-10-18",
         title: "JOTA / JOTI",

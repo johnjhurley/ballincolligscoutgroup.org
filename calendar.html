@@ -170,33 +170,8 @@
 
 
         <!-- Filters -->
-
-        <div class="filters">
-
-            <button class="filter active"
-                    type="button"
-                    data-filter="all">
-                All
-            </button>
-
-            <button class="filter"
-                    type="button"
-                    data-filter="county">
-                County
-            </button>
-
-            <button class="filter"
-                    type="button"
-                    data-filter="group">
-                Group
-            </button>
-
-            <button class="filter"
-                    type="button"
-                    data-filter="training">
-                Training
-            </button>
-
+        <div class="filters" id="calendarFilters">
+            <!-- Generated automatically from event types -->
         </div>
 
 
@@ -390,8 +365,7 @@
     const noEvents =
         document.getElementById("noEvents");
 
-    const filterButtons =
-        document.querySelectorAll(".filter");
+    
 
 
     if (!calendarBody) {
@@ -407,7 +381,54 @@
         ? [...window.groupEvents]
         : [];
 
+        /* -----------------------------------------------------
+        Build filters automatically from event types
+        ----------------------------------------------------- */
 
+        const filtersContainer =
+            document.getElementById("calendarFilters");
+
+        if (filtersContainer) {
+
+            const eventTypes = [
+                ...new Set(
+                    events
+                        .map(event => event.type)
+                        .filter(Boolean)
+                )
+            ].sort();
+
+            // All button
+            const allButton = document.createElement("button");
+
+            allButton.className = "filter active";
+            allButton.type = "button";
+            allButton.dataset.filter = "all";
+            allButton.textContent = "All";
+
+            filtersContainer.appendChild(allButton);
+
+            // Event type buttons
+            eventTypes.forEach(type => {
+
+                const button =
+                    document.createElement("button");
+
+                button.className = "filter";
+                button.type = "button";
+                button.dataset.filter =
+                    type.toLowerCase();
+
+                button.textContent = type;
+
+                filtersContainer.appendChild(button);
+
+            });
+        }
+
+        const filterButtons =
+        document.querySelectorAll(".filter");
+        
     /* -----------------------------------------------------
        Sort events by date
        ----------------------------------------------------- */
