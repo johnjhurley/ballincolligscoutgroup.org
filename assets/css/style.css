@@ -752,6 +752,8 @@ img {
 /* Text below logo */
 .section-card div {
     position: static;
+    width: 75%;
+    margin: 0 auto;
     padding: 0;
 }
 
