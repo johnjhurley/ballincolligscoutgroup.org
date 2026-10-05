@@ -734,12 +734,13 @@ img {
 }
 
 .section-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    width: calc(100% - 36px);
+    height: 180px;
+    margin: 18px 18px 0;
     object-fit: contain;
     object-position: center;
     display: block;
+    border-radius: 12px;
 }
 
 .section-card:hover img {
