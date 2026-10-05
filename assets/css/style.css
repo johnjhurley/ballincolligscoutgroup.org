@@ -723,23 +723,21 @@ img {
 }
 
 .section-card {
-    display: block;
     position: relative;
     overflow: hidden;
+    aspect-ratio: 1 / 1;
 }
 
-/* Section logo */
+/* Logo slightly smaller than card */
 .section-card img {
-    width: calc(100% - 24px);
-    height: auto;
-    aspect-ratio: 1 / 1;
-
-    margin: 12px;
+    width: 88%;
+    height: 88%;
+    margin: 6%;
 
     object-fit: contain;
     object-position: center;
-
     display: block;
+
     transition: transform .3s;
 }
 
@@ -747,28 +745,33 @@ img {
     transform: scale(1.03);
 }
 
-/* Text below logo */
+/* Text OVER the logo - top left */
 .section-card div {
-    position: static;
-    padding: 8px 12px 18px;
+    position: absolute;
+    z-index: 2;
+    top: 24px;
+    left: 28px;
+    bottom: auto;
 }
 
 .section-card small {
     display: block;
-    color: var(--muted);
+    color: #fff;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .08em;
+    text-shadow: 0 1px 4px rgba(0,0,0,.7);
 }
 
 .section-card h3 {
-    margin: 4px 0 0;
-    color: var(--ink);
-    font-size: 27px;
+    margin: 3px 0 0;
+    color: #fff;
+    font-size: 25px;
     letter-spacing: -.04em;
+    text-shadow: 0 1px 5px rgba(0,0,0,.7);
 }
 
-/* Remove old dark photo overlay */
+/* Don't use the old full-card gradient */
 .section-card::after {
     display: none;
 }
