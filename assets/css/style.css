@@ -716,82 +716,30 @@ img {
    SECTION CARDS
    ========================================================= */
 
-.section-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-}
-
 .section-card {
+    position: relative;
     overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #fff;
 }
 
 .section-card img {
-    width: 100%;
-    height: 220px;
+    position: absolute;
+    top: 14px;
+    left: 20px;
+
+    width: calc(100% - 40px);
+    height: calc(100% - 28px);
+
     object-fit: contain;
     object-position: center;
-    box-sizing: border-box;
+    display: block;
 
-    /* visible space around the section graphic */
-    padding: 12px 20px 0;
+    transition: transform .3s;
 }
 
 .section-card:hover img {
     transform: scale(1.03);
-}
-
-.section-card::after {
-    content: '';
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            0deg,
-            rgba(0, 0, 0, .72),
-            rgba(0, 0, 0, 0) 65%
-        );
-}
-
-.section-card div {
-    position: absolute;
-    z-index: 2;
-
-    bottom: 21px;
-    left: 20px;
-}
-
-.section-card small {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: .08em;
-}
-
-.section-card h3 {
-    margin: 4px 0 0;
-
-    font-size: 27px;
-    letter-spacing: -.04em;
-}
-
-/* Individual image framing */
-
-.section-card[href="beavers.html"] img {
-    object-position: 50% 52%;
-}
-
-.section-card[href="cubs.html"] img {
-    object-position: 50% 44%;
-}
-
-.section-card[href="scouts.html"] img {
-    object-position: 50% 50%;
-}
-
-.section-card[href="ventures.html"] img {
-    object-position: 50% 52%;
 }
 
 
