@@ -727,16 +727,15 @@ img {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    padding: 18px;
 }
 
-/* Logo */
+/* Section logos */
 .section-card img {
     width: 75%;
     height: auto;
     aspect-ratio: 1 / 1;
 
-    margin: 0 auto 12px;
+    margin-bottom: 12px;
 
     object-fit: contain;
     object-position: center;
@@ -751,15 +750,15 @@ img {
 
 /* Text below logo */
 .section-card div {
-    position: static;
     width: 75%;
-    margin: 0 auto;
     padding: 0;
 }
 
 .section-card small {
     display: block;
+
     color: var(--muted);
+
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .08em;
@@ -767,14 +766,45 @@ img {
 
 .section-card h3 {
     margin: 3px 0 0;
+
     color: var(--ink);
+
     font-size: 25px;
     letter-spacing: -.04em;
 }
 
-/* Remove old photo overlay */
+/* Remove old photo-card gradient */
 .section-card::after {
     display: none;
+}
+
+
+/* =========================================================
+   SECTION CARD ALIGNMENT
+   Keeps outside edges aligned with the main content above
+   ========================================================= */
+
+/* First card - align left */
+.section-card:first-child img,
+.section-card:first-child div {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Middle cards - centre */
+.section-card:nth-child(2) img,
+.section-card:nth-child(2) div,
+.section-card:nth-child(3) img,
+.section-card:nth-child(3) div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Last card - align right */
+.section-card:last-child img,
+.section-card:last-child div {
+    margin-left: auto;
+    margin-right: 0;
 }
 
 
