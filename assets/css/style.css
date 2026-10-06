@@ -722,35 +722,34 @@ img {
     gap: 18px;
 }
 
+/* All cards use their full grid column */
 .section-card {
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    align-items: flex-start;
 }
 
-/* Section logos */
+/* Logo */
 .section-card img {
     width: 75%;
     height: auto;
     aspect-ratio: 1 / 1;
-
-    margin-bottom: 12px;
+    margin: 0 0 12px 0;
 
     object-fit: contain;
     object-position: center;
     display: block;
-
-    transition: transform .3s;
 }
+
 
 .section-card:hover img {
     transform: scale(1.03);
 }
 
-/* Text below logo */
+/* Text lines up with logo */
 .section-card div {
     width: 75%;
+    margin: 0;
     padding: 0;
 }
 
@@ -776,35 +775,6 @@ img {
 /* Remove old photo-card gradient */
 .section-card::after {
     display: none;
-}
-
-
-/* =========================================================
-   SECTION CARD ALIGNMENT
-   Keeps outside edges aligned with the main content above
-   ========================================================= */
-
-/* First card - align left */
-.section-card:first-child img,
-.section-card:first-child div {
-    margin-left: 0;
-    margin-right: auto;
-}
-
-/* Middle cards - centre */
-.section-card:nth-child(2) img,
-.section-card:nth-child(2) div,
-.section-card:nth-child(3) img,
-.section-card:nth-child(3) div {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Last card - align right */
-.section-card:last-child img,
-.section-card:last-child div {
-    margin-left: auto;
-    margin-right: 0;
 }
 
 
