@@ -722,11 +722,9 @@ img {
     gap: 18px;
 }
 
-/* All cards use their full grid column */
 .section-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 /* Logo */
@@ -734,30 +732,28 @@ img {
     width: 75%;
     height: auto;
     aspect-ratio: 1 / 1;
-    margin: 0 0 12px 0;
+    margin-bottom: 12px;
 
     object-fit: contain;
     object-position: center;
     display: block;
-}
 
+    transition: transform .3s;
+}
 
 .section-card:hover img {
     transform: scale(1.03);
 }
 
-/* Text lines up with logo */
+/* Text */
 .section-card div {
     width: 75%;
-    margin: 0;
     padding: 0;
 }
 
 .section-card small {
     display: block;
-
     color: var(--muted);
-
     font-size: 10px;
     font-weight: 800;
     letter-spacing: .08em;
@@ -765,16 +761,34 @@ img {
 
 .section-card h3 {
     margin: 3px 0 0;
-
     color: var(--ink);
-
     font-size: 25px;
     letter-spacing: -.04em;
 }
 
-/* Remove old photo-card gradient */
 .section-card::after {
     display: none;
+}
+
+
+/* FIRST - flush with left container edge */
+.section-card:nth-child(1) {
+    align-items: flex-start;
+}
+
+/* SECOND */
+.section-card:nth-child(2) {
+    align-items: center;
+}
+
+/* THIRD */
+.section-card:nth-child(3) {
+    align-items: center;
+}
+
+/* LAST - flush with right container edge */
+.section-card:nth-child(4) {
+    align-items: flex-end;
 }
 
 
@@ -1493,10 +1507,6 @@ img {
         grid-template-columns: 1fr;
     }
 
-    .section-card {
-        min-height: 0;
-        aspect-ratio: 4 / 3;
-    }
 
     .info-card:nth-child(even),
     .event-card:nth-child(even) {
