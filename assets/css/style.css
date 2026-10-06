@@ -718,25 +718,24 @@ img {
 
 .section-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4, 220px);
+    justify-content: space-between;
+    gap: 0;
 }
 
 .section-card {
     display: flex;
     flex-direction: column;
+    width: 220px;
 }
 
-/* Logo */
 .section-card img {
-    width: 75%;
+    width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    margin-bottom: 12px;
-
     object-fit: contain;
-    object-position: center;
     display: block;
+    margin: 0 0 12px;
 
     transition: transform .3s;
 }
@@ -745,9 +744,9 @@ img {
     transform: scale(1.03);
 }
 
-/* Text */
 .section-card div {
-    width: 75%;
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 
@@ -768,27 +767,6 @@ img {
 
 .section-card::after {
     display: none;
-}
-
-
-/* FIRST - flush with left container edge */
-.section-card:nth-child(1) {
-    align-items: flex-start;
-}
-
-/* SECOND */
-.section-card:nth-child(2) {
-    align-items: center;
-}
-
-/* THIRD */
-.section-card:nth-child(3) {
-    align-items: center;
-}
-
-/* LAST - flush with right container edge */
-.section-card:nth-child(4) {
-    align-items: flex-end;
 }
 
 
