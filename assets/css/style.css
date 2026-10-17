@@ -718,15 +718,15 @@ img {
 
 .section-cards {
     display: grid;
-    grid-template-columns: repeat(4, 220px);
-    justify-content: start;
+    grid-template-columns: repeat(5, 200px);
+    justify-content: center;
     gap: 20px;
 }
 
 .section-card {
     display: flex;
     flex-direction: column;
-    width: 220px;
+    width: 200px;
 }
 
 .section-card img {
@@ -736,37 +736,11 @@ img {
     object-fit: contain;
     display: block;
     margin: 0 0 12px;
-
     transition: transform .3s;
 }
 
 .section-card:hover img {
     transform: scale(1.03);
-}
-
-.section-card div {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.section-card small {
-    display: block;
-    color: var(--muted);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: .08em;
-}
-
-.section-card h3 {
-    margin: 3px 0 0;
-    color: var(--ink);
-    font-size: 25px;
-    letter-spacing: -.04em;
-}
-
-.section-card::after {
-    display: none;
 }
 
 
@@ -1321,7 +1295,9 @@ img {
     }
 
     .section-cards {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 200px);
+        justify-content: center;
+        gap: 25px;
     }
 
     .feature-grid {
@@ -1477,7 +1453,16 @@ img {
         flex-direction: column;
     }
 
-    .section-cards,
+    .section-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .section-card {
+        width: 100%;
+    }
+
     .info-grid,
     .events-grid,
     .footer-grid,
