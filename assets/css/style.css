@@ -719,8 +719,8 @@ img {
 .section-cards {
     display: grid;
     grid-template-columns: repeat(4, 220px);
-    justify-content: space-between;
-    gap: 0;
+    justify-content: start;
+    gap: 20px;
 }
 
 .section-card {
