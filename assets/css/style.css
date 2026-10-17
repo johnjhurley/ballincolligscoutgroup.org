@@ -718,15 +718,14 @@ img {
 
 .section-cards {
     display: grid;
-    grid-template-columns: repeat(5, 200px);
-    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
     gap: 20px;
 }
 
 .section-card {
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+    width: 100%;
+    max-width: 220px;
 }
 
 .section-card img {
