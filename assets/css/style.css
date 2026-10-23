@@ -1615,3 +1615,49 @@ img {
         height: 100px;
     }
 }
+
+
+/* =========================================
+   SCOUT SECTIONS HEADING
+   ========================================= */
+
+.scout-sections {
+    padding: 30px 0 40px;
+}
+
+.scout-sections-heading {
+    margin-bottom: 25px;
+}
+
+.scout-sections-heading .kicker {
+    margin-bottom: 10px;
+}
+
+.scout-sections-heading h2 {
+    margin: 0 0 15px;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.055em;
+}
+
+.scout-sections-heading > p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.scout-sections .section-cards {
+    margin-top: 25px !important;
+    margin-bottom: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .scout-sections {
+        padding: 20px 0 30px;
+    }
+
+    .scout-sections-heading h2 {
+        font-size: 36px;
+    }
+}
