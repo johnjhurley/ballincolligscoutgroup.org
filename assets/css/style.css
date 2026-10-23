@@ -1535,3 +1535,62 @@ img {
         }
     }
 }
+
+
+
+/* =========================================
+   HOME PAGE - SCOUT SECTION CARDS
+   ========================================= */
+
+.section-cards {
+    max-width: 1200px;
+    margin: 30px auto 60px;
+    padding: 25px 30px;
+
+    border: 2px solid #d4dfd4;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+
+    box-sizing: border-box;
+}
+
+/* Individual section cards */
+.section-cards .section-card {
+    min-width: 0;
+    text-align: center;
+}
+
+/* Section images */
+.section-cards .section-card img {
+    max-width: 100%;
+    height: 140px;
+    object-fit: contain;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .section-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 25px 20px 50px;
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .section-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 20px 15px 40px;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .section-cards .section-card img {
+        height: 100px;
+    }
+}
