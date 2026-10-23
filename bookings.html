@@ -1,295 +1,549 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
 
         <title>Bookings | 49th Cork Ballincollig Scout Group</title>
 
         <meta
             name="description"
-            content="Book the Scout Hall, Bus, Trailer or equipment at 49th Cork Ballincollig Scout Group."
+            content="Book the Scout Hall, Scout Bus, Trailer or equipment at 49th Cork Ballincollig Scout Group."
         />
 
+        <link rel="stylesheet" href="assets/css/style.css" />
         <link rel="icon" type="image/png" href="assets/images/logo.png" />
-
-        <link rel="stylesheet" href="assets/css/style.css?v=13" />
+        <link rel="apple-touch-icon" href="assets/images/logo.png" />
 
         <style>
-            /* =========================================
-               BOOKINGS PAGE
-               ========================================= */
+            /* Booking page styling */
 
-            .bookings-section {
-                padding: 70px 0 90px;
+            .booking-content {
+                padding: 80px 0;
             }
 
-            .bookings-heading {
-                max-width: 800px;
-                margin: 0 auto 40px;
-                text-align: center;
+            .booking-layout {
+                display: grid;
+                grid-template-columns: 1.5fr 0.8fr;
+                gap: 70px;
+                align-items: start;
             }
 
-            .bookings-heading h2 {
-                margin: 0 0 15px;
+            .booking-form-wrap h2 {
+                margin: 0 0 25px;
                 font-size: clamp(32px, 5vw, 48px);
-                letter-spacing: -0.04em;
+                line-height: 1.1;
+                letter-spacing: -0.05em;
             }
 
-            .bookings-heading p {
+            .booking-form-wrap .field {
+                margin-bottom: 20px;
+            }
+
+            .booking-form-wrap .field label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 700;
+            }
+
+            .booking-form-wrap .field input,
+            .booking-form-wrap .field select,
+            .booking-form-wrap .field textarea {
+                width: 100%;
+            }
+
+            .booking-info {
+                padding: 30px;
+                background: var(--cream);
+            }
+
+            .booking-info h3 {
+                margin-top: 0;
+                font-size: 24px;
+            }
+
+            .booking-info p {
                 color: var(--muted);
-                font-size: 15px;
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .booking-checkbox {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin: 25px 0;
+            }
+
+            .booking-checkbox input {
+                width: auto !important;
+                margin-top: 5px;
+            }
+
+            .booking-checkbox label {
+                font-size: 13px;
                 line-height: 1.7;
             }
 
-            .booking-form-container {
-                width: 100%;
-                max-width: 900px;
-                margin: 0 auto;
-                background: #fff;
-                border: 1px solid var(--line);
-                border-radius: 12px;
-                overflow: hidden;
+            .booking-success {
+                padding: 30px;
+                border-left: 4px solid var(--green);
+                background: #e8f4ed;
             }
 
-            .booking-form-container iframe {
-                display: block;
-                width: 100%;
-                height: 1200px;
-                border: none;
-            }
-
-            .booking-help {
-                max-width: 900px;
-                margin: 25px auto 0;
-                text-align: center;
-                color: var(--muted);
-                font-size: 13px;
-            }
-
-            .booking-help a {
+            .booking-success h3 {
+                margin-top: 0;
                 color: var(--green);
-                font-weight: 700;
-                text-decoration: underline;
+            }
+
+            @media (max-width: 920px) {
+                .booking-layout {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
             }
 
             @media (max-width: 600px) {
-                .bookings-section {
-                    padding: 40px 0 60px;
+                .booking-content {
+                    padding: 45px 0;
                 }
 
-                .bookings-heading {
-                    margin-bottom: 25px;
-                }
-
-                .booking-form-container iframe {
-                    height: 1400px;
+                .booking-info {
+                    padding: 22px;
                 }
             }
         </style>
     </head>
 
     <body>
-        <!-- =========================================
-             HEADER / NAVIGATION
-             ========================================= -->
+        <!-- HEADER -->
 
         <header class="site-header">
             <div class="container nav-wrap">
-                <a href="index.html" class="brand">
+                <a class="brand" href="index.html">
                     <img
                         src="assets/images/logo.png"
-                        alt="49th Cork Ballincollig Scout Group Logo"
+                        alt="49th Cork logo"
                     />
-
-                    <div>
+                    <span>
                         <strong>49th Cork</strong>
                         <small>Ballincollig Scout Group</small>
-                    </div>
+                    </span>
                 </a>
 
-                <button
-                    class="menu-toggle"
-                    type="button"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false"
-                >
+                <button class="menu-toggle" aria-label="Open menu">
                     ☰
                 </button>
 
-                <nav class="nav" aria-label="Main navigation">
+                <nav class="nav">
                     <a href="index.html">Home</a>
-
                     <a href="about.html">About</a>
 
-                    <!-- SECTIONS DROPDOWN -->
                     <div class="nav-sections">
                         <button
                             class="sections-toggle"
                             type="button"
                             aria-expanded="false"
                         >
-                            Sections ▾
+                            Sections <span aria-hidden="true">▾</span>
                         </button>
 
                         <div class="sections-menu">
-                            <a href="beavers.html">Beaver Scouts</a>
-                            <a href="cubs.html">Cub Scouts</a>
+                            <a href="beavers.html">Beavers</a>
+                            <a href="cubs.html">Cubs</a>
                             <a href="scouts.html">Scouts</a>
-                            <a href="ventures.html">Venture Scouts</a>
-                            <a href="rovers.html">Rover Scouts</a>
+                            <a href="ventures.html">Ventures</a>
+                            <a href="rovers.html">Rovers</a>
                         </div>
                     </div>
 
-                    <a href="news.html">News</a>
-
+                    <a href="events.html">News</a>
                     <a href="calendar.html">Calendar</a>
-
-                    <a href="bookings.html" class="active" aria-current="page">
-                        Bookings
-                    </a>
-
+                    <a class="active" href="bookings.html">Bookings</a>
                     <a href="parents.html">Parent Hub</a>
-
                     <a href="contact.html">Contact</a>
-
-                    <a href="join.html" class="nav-join">Join Us</a>
+                    <a class="nav-join" href="join.html">Join Us</a>
                 </nav>
             </div>
         </header>
 
-        <!-- =========================================
-             PAGE BANNER
-             ========================================= -->
+        <!-- PAGE BANNER -->
 
         <section class="page-hero">
             <div class="container">
                 <p class="kicker">49th Cork · Ballincollig</p>
 
-                <h1>Bookings</h1>
+                <h1>Equipment Bookings</h1>
 
-                <p>Scout Hall, Bus, Trailer & Equipment</p>
+                <p>
+                    Request the use of our Scout Hall, Community Bus,
+                    Trailer or equipment.
+                </p>
             </div>
         </section>
 
-        <!-- =========================================
-             BOOKING FORM
-             ========================================= -->
+        <!-- BOOKING CONTENT -->
 
-        <main>
-            <section class="bookings-section">
-                <div class="container">
-                    <div class="bookings-heading">
-                        <p class="kicker">Equipment & Facilities</p>
+        <main class="booking-content">
+            <div class="container booking-layout">
 
-                        <h2>Booking Request Form</h2>
+                <!-- BOOKING FORM -->
 
-                        <p>
-                            Use the form below to request a booking for our Scout
-                            Hall, Scout Bus, Scout Trailer or other equipment.
-                        </p>
+                <div class="booking-form-wrap">
+                    <h2>Booking Request</h2>
 
-                        <p>
-                            Please provide the requested details so that your
-                            booking can be reviewed.
-                        </p>
-                    </div>
+                    <p>
+                        Complete the form below to submit your booking request.
+                        All bookings are subject to availability and approval.
+                    </p>
 
-                    <!-- GOOGLE BOOKING FORM -->
-                    <div class="booking-form-container">
-                        <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSfAgVrs7TakZS799PVRfbMsH4-Mi1AOdUkLVHYNy5cEpMHcSw/viewform?embedded=true"
-                            title="49th Cork Equipment Booking Form"
-                            loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                        >
-                            Loading booking form...
-                        </iframe>
-                    </div>
+                    <form
+                        class="contact-form"
+                        id="bookingForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSfAgVrs7TakZS799PVRfbMsH4-Mi1AOdUkLVHYNy5cEpMHcSw/formResponse"
+                        method="POST"
+                        target="booking-form-target"
+                    >
+                        <!-- NAME AND EMAIL -->
 
-                    <!-- FORM HELP -->
-                    <div class="booking-help">
-                        <p>
-                            Having trouble viewing the booking form?
-                            <a
-                                href="https://www.ballincolligscoutgroup.org/forms/bookings"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="booking-name">Full Name *</label>
+
+                                <input
+                                    id="booking-name"
+                                    type="text"
+                                    name="entry.1585344409"
+                                    autocomplete="name"
+                                    required
+                                />
+                            </div>
+
+                            <div class="field">
+                                <label for="booking-email">Email Address *</label>
+
+                                <input
+                                    id="booking-email"
+                                    type="email"
+                                    name="entry.155158828"
+                                    autocomplete="email"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <!-- PHONE -->
+
+                        <div class="field">
+                            <label for="booking-phone">Phone Number *</label>
+
+                            <input
+                                id="booking-phone"
+                                type="tel"
+                                name="entry.2093790254"
+                                autocomplete="tel"
+                                required
+                            />
+                        </div>
+
+                        <!-- EQUIPMENT -->
+
+                        <div class="field">
+                            <label for="booking-equipment">
+                                What would you like to book? *
+                            </label>
+
+                            <select
+                                id="booking-equipment"
+                                name="entry.2056550818"
+                                required
                             >
-                                Open the original booking page
-                            </a>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </main>
+                                <option value="">Select an option</option>
+                                <option value="Scout Hall">Scout Hall</option>
+                                <option value="Scout Bus">Scout Bus</option>
+                                <option value="Scout Trailer">Scout Trailer</option>
+                                <option value="Other Equipment">Other Equipment</option>
+                            </select>
+                        </div>
 
-        <!-- =========================================
-             FOOTER
-             ========================================= -->
+                        <!-- DATES -->
 
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <!-- GROUP DETAILS -->
-                    <div>
-                        <a href="index.html" class="footer-brand">
-                            <img
-                                src="assets/images/logo.png"
-                                alt="49th Cork Scout Group Logo"
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="booking-start">
+                                    Start Date & Time *
+                                </label>
+
+                                <input
+                                    id="booking-start"
+                                    type="datetime-local"
+                                    name="entry.1432231507"
+                                    required
+                                />
+                            </div>
+
+                            <div class="field">
+                                <label for="booking-end">
+                                    End Date & Time *
+                                </label>
+
+                                <input
+                                    id="booking-end"
+                                    type="datetime-local"
+                                    name="entry.188425763"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <!-- SECTION -->
+
+                        <div class="field">
+                            <label for="booking-section">
+                                Scout Section *
+                            </label>
+
+                            <select
+                                id="booking-section"
+                                name="entry.2087370705"
+                                required
+                            >
+                                <option value="">Select a section</option>
+                                <option value="Beavers">Beavers</option>
+                                <option value="Cubs">Cubs</option>
+                                <option value="Scouts">Scouts</option>
+                                <option value="Ventures">Ventures</option>
+                                <option value="Rovers">Rovers</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- COMMENTS -->
+
+                        <div class="field">
+                            <label for="booking-comments">
+                                Additional Information
+                            </label>
+
+                            <textarea
+                                id="booking-comments"
+                                name="entry.711633180"
+                                placeholder="Please provide any additional information about your booking..."
+                            ></textarea>
+                        </div>
+
+                        <!-- TERMS -->
+
+                        <div class="booking-checkbox">
+                            <input
+                                type="checkbox"
+                                id="booking-terms"
+                                required
                             />
 
-                            <div>
-                                <h4>49th Cork</h4>
-                                <p>Ballincollig Scout Group</p>
-                            </div>
-                        </a>
+                            <label for="booking-terms">
+                                I have read and agree to the
+                                Community Bus Terms & Conditions.
+                            </label>
+                        </div>
+
+                        <input
+                            type="hidden"
+                            name="entry.1459875934"
+                            value="I have read and agree to the Community Bus Terms & Conditions."
+                        />
+
+                        <p class="privacy-note">
+                            Please do not include sensitive personal or medical
+                            information in this form.
+                            Submitting a request does not confirm your booking.
+                        </p>
+
+                        <button
+                            class="button"
+                            type="submit"
+                            id="bookingSubmit"
+                        >
+                            Submit Booking Request →
+                        </button>
+                    </form>
+
+                    <!-- HIDDEN GOOGLE FORM TARGET -->
+
+                    <iframe
+                        name="booking-form-target"
+                        id="booking-form-target"
+                        style="display: none"
+                        title="Booking form submission"
+                    ></iframe>
+
+                    <!-- SUCCESS MESSAGE -->
+
+                    <div
+                        id="bookingSuccess"
+                        class="booking-success"
+                        style="display: none"
+                    >
+                        <h3>Booking Request Submitted!</h3>
 
                         <p>
-                            Scout Hall<br />
-                            Station Road<br />
-                            Ballincollig, Cork<br />
-                            P31 EK76
+                            Thank you. Your booking request has been sent to
+                            49th Cork Ballincollig Scout Group.
                         </p>
-                    </div>
 
-                    <!-- QUICK LINKS -->
-                    <div>
-                        <h4>Quick Links</h4>
-
-                        <p><a href="index.html">Home</a></p>
-                        <p><a href="about.html">About Us</a></p>
-                        <p><a href="calendar.html">Calendar</a></p>
-                        <p><a href="bookings.html">Bookings</a></p>
-                        <p><a href="contact.html">Contact</a></p>
-                    </div>
-
-                    <!-- SCOUT SECTIONS -->
-                    <div>
-                        <h4>Scout Sections</h4>
-
-                        <p><a href="beavers.html">Beaver Scouts</a></p>
-                        <p><a href="cubs.html">Cub Scouts</a></p>
-                        <p><a href="scouts.html">Scouts</a></p>
-                        <p><a href="ventures.html">Venture Scouts</a></p>
-                        <p><a href="rovers.html">Rover Scouts</a></p>
+                        <p>
+                            Please note that your booking is not confirmed
+                            until approved by the Group.
+                        </p>
                     </div>
                 </div>
 
-                <div class="footer-bottom">
+                <!-- BOOKING INFORMATION -->
+
+                <aside class="booking-info">
+                    <p class="kicker">Booking Information</p>
+
+                    <h3>Before You Book</h3>
+
                     <p>
-                        &copy; 2026 49th Cork Ballincollig Scout Group.
-                        All rights reserved.
+                        Our Scout Hall, Community Bus, Trailer and equipment
+                        are available for approved bookings.
+                    </p>
+
+                    <p>
+                        Please ensure you select the correct equipment and
+                        provide accurate dates and times.
+                    </p>
+
+                    <p>
+                        All booking requests are subject to availability
+                        and approval by the Scout Group.
+                    </p>
+
+                    <h3>Scout Hall</h3>
+
+                    <p>
+                        <strong>
+                            Station Road<br />
+                            Ballincollig, Co. Cork<br />
+                            P31 EK76
+                        </strong>
+                    </p>
+
+                    <p>
+                        Questions about bookings?
+                    </p>
+
+                    <p>
+                        <a class="arrow-link" href="contact.html">
+                            Contact the Group →
+                        </a>
+                    </p>
+                </aside>
+
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <div class="container footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <img
+                            src="assets/images/logo.png"
+                            alt="49th Cork logo"
+                        />
+
+                        <div>
+                            <h4>49th Cork Ballincollig</h4>
+                            <p>Adventure, friendship and skills for life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Find us</h4>
+
+                    <p>
+                        Scout Hall, Station Road<br />
+                        Ballincollig, Co. Cork<br />
+                        P31 EK76
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Explore</h4>
+
+                    <p>
+                        <a href="calendar.html">Group Calendar</a><br />
+                        <a href="events.html">News</a><br />
+                        <a href="parents.html">Parent Hub</a><br />
+                        <a href="bookings.html">Bookings</a><br />
+                        <a href="join.html">Join Us</a><br />
+                        <a
+                            href="https://www.instagram.com/49th.ballincollig.scout.group/"
+                        >
+                            Instagram
+                        </a>
                     </p>
                 </div>
             </div>
+
+            <div class="container footer-bottom">
+                © 49th Cork Ballincollig Scout Group ·
+                Scouting in Ballincollig since 1975
+            </div>
         </footer>
 
-        <!-- =========================================
-             JAVASCRIPT
-             ========================================= -->
+        <!-- FORM SUBMISSION SCRIPT -->
 
-        <script src="assets/js/events.js"></script>
+        <script>
+            (function () {
+                const form = document.getElementById("bookingForm");
+                const iframe = document.getElementById("booking-form-target");
+                const success = document.getElementById("bookingSuccess");
+                const button = document.getElementById("bookingSubmit");
+
+                let submitted = false;
+
+                form.addEventListener("submit", function (event) {
+                    const start = new Date(
+                        document.getElementById("booking-start").value
+                    );
+
+                    const end = new Date(
+                        document.getElementById("booking-end").value
+                    );
+
+                    if (end <= start) {
+                        event.preventDefault();
+
+                        alert(
+                            "The booking end date and time must be after the start date and time."
+                        );
+
+                        return;
+                    }
+
+                    submitted = true;
+
+                    button.disabled = true;
+                    button.textContent = "Sending…";
+                });
+
+                iframe.addEventListener("load", function () {
+                    if (!submitted) return;
+
+                    form.style.display = "none";
+                    success.style.display = "block";
+
+                    form.reset();
+                    submitted = false;
+                });
+            })();
+        </script>
+
         <script src="assets/js/site.js"></script>
     </body>
 </html>

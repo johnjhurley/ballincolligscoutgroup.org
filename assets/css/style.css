@@ -1809,3 +1809,50 @@ img {
     }
 }
 
+/* =========================================
+   EQUIPMENT BOOKING FORM
+   ========================================= */
+
+#booking-form {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+#booking-form .field {
+    margin-bottom: 22px;
+}
+
+#booking-form .field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    font: inherit;
+}
+
+#booking-form input:focus,
+#booking-form select:focus,
+#booking-form textarea:focus {
+    outline: 2px solid rgba(0, 107, 84, 0.2);
+    border-color: var(--green);
+}
+
+#booking-form .button {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #booking-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
