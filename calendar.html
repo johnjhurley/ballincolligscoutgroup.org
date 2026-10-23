@@ -1,635 +1,416 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
 
-<head>
-    <meta charset="utf-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Calendar | 49th Cork Ballincollig Scout Group</title>
 
-    <meta name="description"
-          content="Group and Lee Valley County calendar for 49th Cork Ballincollig Scout Group.">
+    <meta
+      name="description"
+      content="Group and Lee Valley County calendar for 49th Cork Ballincollig Scout Group."
+    />
 
-    <link rel="stylesheet"
-          href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link rel="icon"
-          type="image/png"
-          href="assets/images/logo.png">
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
-    <link rel="apple-touch-icon"
-          href="assets/images/logo.png">
-</head>
+    <link rel="apple-touch-icon" href="assets/images/logo.png" />
+  </head>
 
-
-<body>
-
-
-<!-- =====================================================
+  <body>
+    <!-- =====================================================
      HEADER
      ===================================================== -->
 
-<header class="site-header">
-
-    <div class="container nav-wrap">
-
+    <header class="site-header">
+      <div class="container nav-wrap">
         <a class="brand" href="index.html">
+          <img src="assets/images/logo.png" alt="49th Cork logo" />
 
-            <img src="assets/images/logo.png"
-                 alt="49th Cork logo">
-
-            <span>
-                <strong>49th Cork</strong>
-                <small>Ballincollig Scout Group</small>
-            </span>
-
+          <span>
+            <strong>49th Cork</strong>
+            <small>Ballincollig Scout Group</small>
+          </span>
         </a>
 
-
-        <button class="menu-toggle"
-                aria-label="Open menu">
-            ☰
-        </button>
-
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
 
         <nav class="nav">
+          <a href="index.html"> Home </a>
 
-            <a href="index.html">
-                Home
-            </a>
+          <a href="about.html"> About </a>
 
-            <a href="about.html">
-                About
-            </a>
+          <!-- Sections dropdown -->
 
+          <div class="nav-sections">
+            <button class="sections-toggle" type="button" aria-expanded="false">
+              Sections
+              <span aria-hidden="true">▾</span>
+            </button>
 
-            <!-- Sections dropdown -->
+            <div class="sections-menu">
+              <a href="beavers.html"> Beavers </a>
 
-            <div class="nav-sections">
+              <a href="cubs.html"> Cubs </a>
 
-                <button class="sections-toggle"
-                        type="button"
-                        aria-expanded="false">
+              <a href="scouts.html"> Scouts </a>
 
-                    Sections
-                    <span aria-hidden="true">▾</span>
-
-                </button>
-
-
-                <div class="sections-menu">
-
-                    <a href="beavers.html">
-                        Beavers
-                    </a>
-
-                    <a href="cubs.html">
-                        Cubs
-                    </a>
-
-                    <a href="scouts.html">
-                        Scouts
-                    </a>
-
-                    <a href="ventures.html">
-                        Ventures
-                    </a>
-
-                </div>
-
+              <a href="ventures.html"> Ventures </a>
+              <a href="rovers.html">Rovers</a>
             </div>
+          </div>
 
+          <a href="events.html"> News </a>
 
-            <a href="events.html">
-                News
-            </a>
+          <a class="active" href="calendar.html"> Calendar </a>
 
-            <a class="active"
-               href="calendar.html">
-                Calendar
-            </a>
+          <a href="parents.html"> Parent Hub </a>
 
-            <a href="parents.html">
-                Parent Hub
-            </a>
+          <a href="contact.html"> Contact </a>
 
-            <a href="contact.html">
-                Contact
-            </a>
-
-            <a class="nav-join"
-               href="join.html">
-                Join Us
-            </a>
-
+          <a class="nav-join" href="join.html"> Join Us </a>
         </nav>
+      </div>
+    </header>
 
-    </div>
-
-</header>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      PAGE HERO
      ===================================================== -->
 
-<section class="page-hero">
+    <section class="page-hero">
+      <div class="container">
+        <p class="kicker">Member information</p>
 
-    <div class="container">
-
-        <p class="kicker">
-            Member information
-        </p>
-
-        <h1>
-            Group Calendar
-        </h1>
+        <h1>Group Calendar</h1>
 
         <p>
-            Key Group and Lee Valley County dates for the
-            Scouting year. Details marked TBC will be updated
-            when confirmed.
+          Key Group and Lee Valley County dates for the Scouting year. Details
+          marked TBC will be updated when confirmed.
         </p>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      CALENDAR
      ===================================================== -->
 
-<main class="content">
-
-    <div class="container">
-
-
+    <main class="content">
+      <div class="container">
         <!-- Filters -->
         <div class="filters" id="calendarFilters">
-            <!-- Generated automatically from event types -->
+          <!-- Generated automatically from event types -->
         </div>
-
-
 
         <!-- Calendar -->
 
         <div class="calendar-wrap">
+          <table class="calendar">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Type</th>
+                <th>Location</th>
+              </tr>
+            </thead>
 
-            <table class="calendar">
-
-                <thead>
-
-                    <tr>
-                        <th>Date</th>
-                        <th>Event</th>
-                        <th>Type</th>
-                        <th>Location</th>
-                    </tr>
-
-                </thead>
-
-
-                <tbody id="calendarBody">
-
-                    <!--
+            <tbody id="calendarBody">
+              <!--
                         Events are generated automatically
                         from assets/js/events.js
                     -->
-
-                </tbody>
-
-            </table>
-
+            </tbody>
+          </table>
         </div>
-
 
         <!-- Message displayed if no events exist -->
 
-        <div id="noEvents"
-             style="display:none;">
-
-            <p>
-                No upcoming events are currently listed.
-            </p>
-
+        <div id="noEvents" style="display: none">
+          <p>No upcoming events are currently listed.</p>
         </div>
+      </div>
+    </main>
 
-    </div>
-
-</main>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      FOOTER
      ===================================================== -->
 
-<footer class="footer">
-
-    <div class="container footer-grid">
-
-
+    <footer class="footer">
+      <div class="container footer-grid">
         <div>
+          <div class="footer-brand">
+            <img src="assets/images/logo.png" alt="49th Cork logo" />
 
-            <div class="footer-brand">
+            <div>
+              <h4>49th Cork Ballincollig</h4>
 
-                <img src="assets/images/logo.png"
-                     alt="49th Cork logo">
-
-                <div>
-
-                    <h4>
-                        49th Cork Ballincollig
-                    </h4>
-
-                    <p>
-                        Adventure, friendship and skills for life.
-                    </p>
-
-                </div>
-
+              <p>Adventure, friendship and skills for life.</p>
             </div>
-
+          </div>
         </div>
-
-
 
         <div>
+          <h4>Find us</h4>
 
-            <h4>
-                Find us
-            </h4>
-
-            <p>
-                Scout Hall, Station Road<br>
-                Ballincollig, Co. Cork<br>
-                P31 EK76
-            </p>
-
+          <p>
+            Scout Hall, Station Road<br />
+            Ballincollig, Co. Cork<br />
+            P31 EK76
+          </p>
         </div>
-
-
 
         <div>
+          <h4>Explore</h4>
 
-            <h4>
-                Explore
-            </h4>
+          <p>
+            <a href="calendar.html"> Group Calendar </a>
 
-            <p>
+            <br />
 
-                <a href="calendar.html">
-                    Group Calendar
-                </a>
+            <a href="events.html"> News </a>
 
-                <br>
+            <br />
 
-                <a href="events.html">
-                    News
-                </a>
+            <a href="parents.html"> Parent Hub </a>
 
-                <br>
+            <br />
 
-                <a href="parents.html">
-                    Parent Hub
-                </a>
+            <a href="join.html"> Join Us </a>
 
-                <br>
+            <br />
 
-                <a href="join.html">
-                    Join Us
-                </a>
+            <a
+              href="https://www.instagram.com/49th.ballincollig.scout.group/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </a>
 
-                <br>
+            <br />
 
-                <a href="https://www.instagram.com/49th.ballincollig.scout.group/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Instagram
-                </a>
-
-                <br>
-
-                <a href="https://www.facebook.com/ballincollig.scout"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Facebook
-                </a>
-
-            </p>
-
+            <a
+              href="https://www.facebook.com/ballincollig.scout"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook
+            </a>
+          </p>
         </div>
+      </div>
 
-    </div>
+      <div class="container footer-bottom">
+        © 49th Cork Ballincollig Scout Group · Scouting in Ballincollig since
+        1975
+      </div>
+    </footer>
 
-
-    <div class="container footer-bottom">
-
-        © 49th Cork Ballincollig Scout Group ·
-        Scouting in Ballincollig since 1975
-
-    </div>
-
-</footer>
-
-
-
-<!-- =====================================================
+    <!-- =====================================================
      JAVASCRIPT
 
      events.js MUST load before site.js
      ===================================================== -->
 
-<script src="assets/js/events.js"></script>
+    <script src="assets/js/events.js"></script>
 
-<script src="assets/js/site.js"></script>
+    <script src="assets/js/site.js"></script>
 
-
-
-<!-- =====================================================
+    <!-- =====================================================
      DYNAMIC CALENDAR
      ===================================================== -->
 
-<script>
+    <script>
+      (function () {
+        const calendarBody = document.getElementById("calendarBody");
 
-(function () {
+        const noEvents = document.getElementById("noEvents");
 
-    const calendarBody =
-        document.getElementById("calendarBody");
+        if (!calendarBody) {
+          return;
+        }
 
-    const noEvents =
-        document.getElementById("noEvents");
-
-    
-
-
-    if (!calendarBody) {
-        return;
-    }
-
-
-    /* -----------------------------------------------------
+        /* -----------------------------------------------------
        Get events
        ----------------------------------------------------- */
 
-    const events = Array.isArray(window.groupEvents)
-        ? [...window.groupEvents]
-        : [];
+        const events = Array.isArray(window.groupEvents)
+          ? [...window.groupEvents]
+          : [];
 
         /* -----------------------------------------------------
         Build filters automatically from event types
         ----------------------------------------------------- */
 
-        const filtersContainer =
-            document.getElementById("calendarFilters");
+        const filtersContainer = document.getElementById("calendarFilters");
 
         if (filtersContainer) {
+          const eventTypes = [
+            ...new Set(events.map((event) => event.type).filter(Boolean)),
+          ].sort();
 
-            const eventTypes = [
-                ...new Set(
-                    events
-                        .map(event => event.type)
-                        .filter(Boolean)
-                )
-            ].sort();
+          // All button
+          const allButton = document.createElement("button");
 
-            // All button
-            const allButton = document.createElement("button");
+          allButton.className = "filter active";
+          allButton.type = "button";
+          allButton.dataset.filter = "all";
+          allButton.textContent = "All";
 
-            allButton.className = "filter active";
-            allButton.type = "button";
-            allButton.dataset.filter = "all";
-            allButton.textContent = "All";
+          filtersContainer.appendChild(allButton);
 
-            filtersContainer.appendChild(allButton);
+          // Event type buttons
+          eventTypes.forEach((type) => {
+            const button = document.createElement("button");
 
-            // Event type buttons
-            eventTypes.forEach(type => {
+            button.className = "filter";
+            button.type = "button";
+            button.dataset.filter = type.toLowerCase();
 
-                const button =
-                    document.createElement("button");
+            button.textContent = type;
 
-                button.className = "filter";
-                button.type = "button";
-                button.dataset.filter =
-                    type.toLowerCase();
-
-                button.textContent = type;
-
-                filtersContainer.appendChild(button);
-
-            });
+            filtersContainer.appendChild(button);
+          });
         }
 
-        const filterButtons =
-        document.querySelectorAll(".filter");
-        
-    /* -----------------------------------------------------
+        const filterButtons = document.querySelectorAll(".filter");
+
+        /* -----------------------------------------------------
        Sort events by date
        ----------------------------------------------------- */
 
-    events.sort((a, b) =>
-        new Date(a.date + "T00:00:00") -
-        new Date(b.date + "T00:00:00")
-    );
+        events.sort(
+          (a, b) =>
+            new Date(a.date + "T00:00:00") - new Date(b.date + "T00:00:00"),
+        );
 
-
-    /* -----------------------------------------------------
+        /* -----------------------------------------------------
        Render calendar
        ----------------------------------------------------- */
 
-    function renderCalendar(filter = "all") {
+        function renderCalendar(filter = "all") {
+          calendarBody.innerHTML = "";
 
-        calendarBody.innerHTML = "";
+          let currentMonth = "";
 
-        let currentMonth = "";
+          let displayedEvents = 0;
 
-        let displayedEvents = 0;
-
-
-        events.forEach(event => {
-
-            const eventType =
-                (event.type || "Group").toLowerCase();
-
+          events.forEach((event) => {
+            const eventType = (event.type || "Group").toLowerCase();
 
             /*
              * Apply selected filter
              */
 
-            if (
-                filter !== "all" &&
-                eventType !== filter
-            ) {
-                return;
+            if (filter !== "all" && eventType !== filter) {
+              return;
             }
 
-
-            const date =
-                new Date(event.date + "T00:00:00");
-
+            const date = new Date(event.date + "T00:00:00");
 
             if (Number.isNaN(date.getTime())) {
-                return;
+              return;
             }
 
-
             displayedEvents++;
-
 
             /* ---------------------------------------------
                Month heading
                --------------------------------------------- */
 
-            const monthHeading =
-                date.toLocaleDateString(
-                    "en-IE",
-                    {
-                        month: "long",
-                        year: "numeric"
-                    }
-                );
-
+            const monthHeading = date.toLocaleDateString("en-IE", {
+              month: "long",
+              year: "numeric",
+            });
 
             if (monthHeading !== currentMonth) {
+              const monthRow = document.createElement("tr");
 
-                const monthRow =
-                    document.createElement("tr");
+              monthRow.className = "month";
 
-                monthRow.className = "month";
+              const monthCell = document.createElement("td");
 
+              monthCell.colSpan = 4;
+              monthCell.textContent = monthHeading;
 
-                const monthCell =
-                    document.createElement("td");
+              monthRow.appendChild(monthCell);
 
-                monthCell.colSpan = 4;
-                monthCell.textContent = monthHeading;
+              calendarBody.appendChild(monthRow);
 
-
-                monthRow.appendChild(monthCell);
-
-                calendarBody.appendChild(monthRow);
-
-
-                currentMonth = monthHeading;
+              currentMonth = monthHeading;
             }
-
 
             /* ---------------------------------------------
                Date
                --------------------------------------------- */
 
-            let displayDate =
-                date.toLocaleDateString(
-                    "en-IE",
-                    {
-                        weekday: "short",
-                        day: "numeric",
-                        month: "short"
-                    }
-                );
-
+            let displayDate = date.toLocaleDateString("en-IE", {
+              weekday: "short",
+              day: "numeric",
+              month: "short",
+            });
 
             if (event.time) {
-
-                displayDate +=
-                    " · " + event.time;
-
+              displayDate += " · " + event.time;
             }
-
 
             /* ---------------------------------------------
                Event row
                --------------------------------------------- */
 
-            const row =
-                document.createElement("tr");
-
+            const row = document.createElement("tr");
 
             row.dataset.type = eventType;
 
-
-
             /* Date */
 
-            const dateCell =
-                document.createElement("td");
+            const dateCell = document.createElement("td");
 
-            dateCell.textContent =
-                displayDate;
-
-
+            dateCell.textContent = displayDate;
 
             /* Event */
 
-            const eventCell =
-                document.createElement("td");
+            const eventCell = document.createElement("td");
 
+            const title = document.createElement("strong");
 
-            const title =
-                document.createElement("strong");
-
-            title.textContent =
-                event.title || "Event";
-
+            title.textContent = event.title || "Event";
 
             eventCell.appendChild(title);
-
 
             /*
              * Optional description
              */
 
             if (event.description) {
+              const description = document.createElement("div");
 
-                const description =
-                    document.createElement("div");
+              description.className = "event-description";
 
-                description.className =
-                    "event-description";
+              description.textContent = event.description;
 
-                description.textContent =
-                    event.description;
-
-                eventCell.appendChild(description);
-
+              eventCell.appendChild(description);
             }
-
-
 
             /* Type */
 
-            const typeCell =
-                document.createElement("td");
+            const typeCell = document.createElement("td");
 
-
-            const tag =
-                document.createElement("span");
+            const tag = document.createElement("span");
 
             tag.className = "tag";
 
-            tag.textContent =
-                event.type || "Group";
-
+            tag.textContent = event.type || "Group";
 
             typeCell.appendChild(tag);
 
-
-
             /* Location */
 
-            const locationCell =
-                document.createElement("td");
+            const locationCell = document.createElement("td");
 
-            locationCell.textContent =
-                event.location || "TBC";
-
-
+            locationCell.textContent = event.location || "TBC";
 
             /* Add cells */
 
@@ -638,70 +419,38 @@
             row.appendChild(typeCell);
             row.appendChild(locationCell);
 
-
             calendarBody.appendChild(row);
+          });
 
-        });
-
-
-
-        /* ---------------------------------------------
+          /* ---------------------------------------------
            No events
            --------------------------------------------- */
 
-        if (noEvents) {
-
-            noEvents.style.display =
-                displayedEvents === 0
-                    ? "block"
-                    : "none";
-
+          if (noEvents) {
+            noEvents.style.display = displayedEvents === 0 ? "block" : "none";
+          }
         }
 
-    }
-
-
-
-    /* -----------------------------------------------------
+        /* -----------------------------------------------------
        Filters
        ----------------------------------------------------- */
 
-    filterButtons.forEach(button => {
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
 
-        button.addEventListener(
-            "click",
-            function () {
+            this.classList.add("active");
 
-                filterButtons.forEach(btn =>
-                    btn.classList.remove("active")
-                );
+            renderCalendar(this.dataset.filter);
+          });
+        });
 
-
-                this.classList.add("active");
-
-
-                renderCalendar(
-                    this.dataset.filter
-                );
-
-            }
-        );
-
-    });
-
-
-
-    /* -----------------------------------------------------
+        /* -----------------------------------------------------
        Initial calendar
        ----------------------------------------------------- */
 
-    renderCalendar("all");
-
-})();
-
-</script>
-
-
-</body>
-
+        renderCalendar("all");
+      })();
+    </script>
+  </body>
 </html>
