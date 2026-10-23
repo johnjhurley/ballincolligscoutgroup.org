@@ -1110,6 +1110,7 @@ img {
     max-height: 520px;
     aspect-ratio: 16 / 7;
 
+    margin-top: 40px;
     margin-bottom: 70px;
 
     overflow: hidden;
@@ -1807,3 +1808,4 @@ img {
         display: block;
     }
 }
+
