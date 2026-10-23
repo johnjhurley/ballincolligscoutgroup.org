@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Bookings | 49th Cork Ballincollig Scout Group</title>
+
+        <meta
+            name="description"
+            content="Book the Scout Hall, Bus, Trailer or equipment at 49th Cork Ballincollig Scout Group."
+        />
+
+        <link rel="icon" type="image/png" href="assets/images/logo.png" />
+
+        <link rel="stylesheet" href="assets/css/style.css?v=13" />
+
+        <style>
+            /* =========================================
+               BOOKINGS PAGE
+               ========================================= */
+
+            .bookings-section {
+                padding: 70px 0 90px;
+            }
+
+            .bookings-heading {
+                max-width: 800px;
+                margin: 0 auto 40px;
+                text-align: center;
+            }
+
+            .bookings-heading h2 {
+                margin: 0 0 15px;
+                font-size: clamp(32px, 5vw, 48px);
+                letter-spacing: -0.04em;
+            }
+
+            .bookings-heading p {
+                color: var(--muted);
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .booking-form-container {
+                width: 100%;
+                max-width: 900px;
+                margin: 0 auto;
+                background: #fff;
+                border: 1px solid var(--line);
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .booking-form-container iframe {
+                display: block;
+                width: 100%;
+                height: 1200px;
+                border: none;
+            }
+
+            .booking-help {
+                max-width: 900px;
+                margin: 25px auto 0;
+                text-align: center;
+                color: var(--muted);
+                font-size: 13px;
+            }
+
+            .booking-help a {
+                color: var(--green);
+                font-weight: 700;
+                text-decoration: underline;
+            }
+
+            @media (max-width: 600px) {
+                .bookings-section {
+                    padding: 40px 0 60px;
+                }
+
+                .bookings-heading {
+                    margin-bottom: 25px;
+                }
+
+                .booking-form-container iframe {
+                    height: 1400px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- =========================================
+             HEADER / NAVIGATION
+             ========================================= -->
+
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a href="index.html" class="brand">
+                    <img
+                        src="assets/images/logo.png"
+                        alt="49th Cork Ballincollig Scout Group Logo"
+                    />
+
+                    <div>
+                        <strong>49th Cork</strong>
+                        <small>Ballincollig Scout Group</small>
+                    </div>
+                </a>
+
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+
+                    <a href="about.html">About</a>
+
+                    <!-- SECTIONS DROPDOWN -->
+                    <div class="nav-sections">
+                        <button
+                            class="sections-toggle"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Sections ▾
+                        </button>
+
+                        <div class="sections-menu">
+                            <a href="beavers.html">Beaver Scouts</a>
+                            <a href="cubs.html">Cub Scouts</a>
+                            <a href="scouts.html">Scouts</a>
+                            <a href="ventures.html">Venture Scouts</a>
+                            <a href="rovers.html">Rover Scouts</a>
+                        </div>
+                    </div>
+
+                    <a href="news.html">News</a>
+
+                    <a href="calendar.html">Calendar</a>
+
+                    <a href="bookings.html" class="active" aria-current="page">
+                        Bookings
+                    </a>
+
+                    <a href="parents.html">Parent Hub</a>
+
+                    <a href="contact.html">Contact</a>
+
+                    <a href="join.html" class="nav-join">Join Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- =========================================
+             PAGE BANNER
+             ========================================= -->
+
+        <section class="page-hero">
+            <div class="container">
+                <p class="kicker">49th Cork · Ballincollig</p>
+
+                <h1>Bookings</h1>
+
+                <p>Scout Hall, Bus, Trailer & Equipment</p>
+            </div>
+        </section>
+
+        <!-- =========================================
+             BOOKING FORM
+             ========================================= -->
+
+        <main>
+            <section class="bookings-section">
+                <div class="container">
+                    <div class="bookings-heading">
+                        <p class="kicker">Equipment & Facilities</p>
+
+                        <h2>Booking Request Form</h2>
+
+                        <p>
+                            Use the form below to request a booking for our Scout
+                            Hall, Scout Bus, Scout Trailer or other equipment.
+                        </p>
+
+                        <p>
+                            Please provide the requested details so that your
+                            booking can be reviewed.
+                        </p>
+                    </div>
+
+                    <!-- GOOGLE BOOKING FORM -->
+                    <div class="booking-form-container">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSfAgVrs7TakZS799PVRfbMsH4-Mi1AOdUkLVHYNy5cEpMHcSw/viewform?embedded=true"
+                            title="49th Cork Equipment Booking Form"
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                        >
+                            Loading booking form...
+                        </iframe>
+                    </div>
+
+                    <!-- FORM HELP -->
+                    <div class="booking-help">
+                        <p>
+                            Having trouble viewing the booking form?
+                            <a
+                                href="https://www.ballincolligscoutgroup.org/forms/bookings"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Open the original booking page
+                            </a>.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- =========================================
+             FOOTER
+             ========================================= -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- GROUP DETAILS -->
+                    <div>
+                        <a href="index.html" class="footer-brand">
+                            <img
+                                src="assets/images/logo.png"
+                                alt="49th Cork Scout Group Logo"
+                            />
+
+                            <div>
+                                <h4>49th Cork</h4>
+                                <p>Ballincollig Scout Group</p>
+                            </div>
+                        </a>
+
+                        <p>
+                            Scout Hall<br />
+                            Station Road<br />
+                            Ballincollig, Cork<br />
+                            P31 EK76
+                        </p>
+                    </div>
+
+                    <!-- QUICK LINKS -->
+                    <div>
+                        <h4>Quick Links</h4>
+
+                        <p><a href="index.html">Home</a></p>
+                        <p><a href="about.html">About Us</a></p>
+                        <p><a href="calendar.html">Calendar</a></p>
+                        <p><a href="bookings.html">Bookings</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                    </div>
+
+                    <!-- SCOUT SECTIONS -->
+                    <div>
+                        <h4>Scout Sections</h4>
+
+                        <p><a href="beavers.html">Beaver Scouts</a></p>
+                        <p><a href="cubs.html">Cub Scouts</a></p>
+                        <p><a href="scouts.html">Scouts</a></p>
+                        <p><a href="ventures.html">Venture Scouts</a></p>
+                        <p><a href="rovers.html">Rover Scouts</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2026 49th Cork Ballincollig Scout Group.
+                        All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- =========================================
+             JAVASCRIPT
+             ========================================= -->
+
+        <script src="assets/js/events.js"></script>
+        <script src="assets/js/site.js"></script>
+    </body>
+</html>
