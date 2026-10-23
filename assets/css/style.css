@@ -1543,13 +1543,14 @@ img {
    ========================================= */
 
 .section-cards {
-    max-width: 1200px;
+    width: min(var(--max), calc(100% - 48px));
+    max-width: 1160px;
+
     margin: 30px auto 60px;
-    padding: 25px 30px;
+    padding: 30px;
 
     border: 2px solid #d4dfd4;
     border-radius: 16px;
-
     background: #ffffff;
 
     display: grid;
@@ -1561,33 +1562,53 @@ img {
 
 /* Individual section cards */
 .section-cards .section-card {
-    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    min-width: 0;
 }
 
 /* Section images */
 .section-cards .section-card img {
-    max-width: 100%;
-    height: 140px;
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
     object-fit: contain;
+    margin-bottom: 12px;
+}
+
+/* Section text */
+.section-cards .section-card h3 {
+    margin: 5px 0;
+}
+
+.section-cards .section-card small {
+    color: var(--green);
+    font-weight: 700;
 }
 
 /* Tablet */
 @media (max-width: 900px) {
     .section-cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        margin: 25px 20px 50px;
-        padding: 20px;
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .section-cards .section-card img {
+        height: 130px;
     }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
     .section-cards {
+        width: calc(100% - 30px);
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        margin: 20px 15px 40px;
         padding: 15px;
         gap: 15px;
+        margin: 20px auto 40px;
     }
 
     .section-cards .section-card img {
