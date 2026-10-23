@@ -71,4 +71,12 @@ window.groupEvents = [
         location: "Pallaskenry, Co. Limerick",
         description: "Jamanji themed Beaver Summer Camp"
     }
+    {
+        date: "2026-11-17",
+        endDate: "2026-11-17",
+        title: "Ballincollig Scout Group Open Night",
+        type: "Group",
+        location: "Ballincollig Scout Den",
+        description: ""
+    }
 ];
