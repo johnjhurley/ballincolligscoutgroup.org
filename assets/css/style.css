@@ -1661,3 +1661,90 @@ img {
         font-size: 36px;
     }
 }
+
+
+/* =========================================
+   SCOUT SECTIONS - NO BORDER
+   ========================================= */
+
+.scout-sections .section-cards {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+
+    padding: 10px 0 !important;
+    margin: 25px auto 40px !important;
+
+    width: 100% !important;
+    max-width: 1160px !important;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Individual sections */
+.section-cards .section-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Logos */
+.section-cards .section-card img {
+    width: 100%;
+    max-width: 160px;
+    height: 160px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Section names */
+.section-cards .section-card h3 {
+    margin: 6px 0 10px;
+    font-size: 18px;
+}
+
+/* Meeting information */
+.section-cards .meeting-time {
+    margin: 5px 0 0;
+    padding-top: 10px;
+
+    border-top: 1px solid #d9ddd9;
+
+    color: #006b54;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.7;
+
+    width: 100%;
+    text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .scout-sections .section-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .scout-sections .section-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .section-cards .section-card img {
+        height: 100px;
+    }
+
+    .section-cards .section-card h3 {
+        font-size: 16px;
+    }
+
+    .section-cards .meeting-time {
+        font-size: 12px;
+    }
+}
