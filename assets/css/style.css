@@ -1748,3 +1748,62 @@ img {
         font-size: 12px;
     }
 }
+
+
+/* =========================================
+   HOMEPAGE PHOTO BAND - EQUAL SIZE IMAGES
+   ========================================= */
+
+.photo-band-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+}
+
+.photo-band figure {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 400px;
+    aspect-ratio: auto;
+    overflow: hidden;
+}
+
+.photo-band figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tablet */
+@media (max-width: 920px) {
+    .photo-band-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .photo-band figure {
+        height: 280px;
+    }
+
+    .photo-band figure:last-child {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .photo-band-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-band figure {
+        height: 250px;
+    }
+
+    .photo-band figure:nth-child(2),
+    .photo-band figure:last-child {
+        display: block;
+    }
+}
