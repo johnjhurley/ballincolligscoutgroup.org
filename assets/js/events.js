@@ -77,6 +77,6 @@ window.groupEvents = [
         title: "Ballincollig Scout Group Open Night",
         type: "Group",
         location: "Ballincollig Scout Den",
-        description: ""
+        description: "Open Night for new members and parents to learn about the Scout Group and its activities."
     }
 ];
