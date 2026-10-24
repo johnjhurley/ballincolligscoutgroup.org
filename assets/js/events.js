@@ -36,7 +36,7 @@ window.groupEvents = [
         endDate: "2026-11-01",
         title: "Lee Valley Hike",
         type: "County - Beavers/Cubs/Scouts",
-        location: "TBC",
+        location: "Gougane Barra",
         description: "Lee Valley County Hike."
     },
     {
