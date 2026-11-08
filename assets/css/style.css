@@ -1856,3 +1856,58 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* Open Night Event */
+
+.open-night-event {
+  margin-bottom: 50px;
+}
+
+.open-night-content {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.open-night-flyer {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.open-night-details h3 {
+  margin-bottom: 20px;
+}
+
+.open-night-details p {
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* Mobile layout */
+
+@media (max-width: 768px) {
+  .open-night-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .open-night-flyer {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+/* Homepage Open Night flyer */
+.open-night-home { padding: 48px 0; background: #f5f8f5; }
+.open-night-home-grid { display: grid; grid-template-columns: minmax(0, 350px) minmax(0, 1fr); gap: 44px; align-items: center; }
+.open-night-home-image img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.open-night-home-details h2 { margin: 0 0 20px; }
+.open-night-home-details p { margin: 0 0 20px; line-height: 1.7; }
+@media (max-width: 768px) {
+  .open-night-home { padding: 30px 0; }
+  .open-night-home-grid { grid-template-columns: 1fr; gap: 24px; }
+  .open-night-home-image { width: 100%; max-width: 350px; margin: 0 auto; }
+}
