@@ -24,8 +24,8 @@ window.groupEvents = [
         description: "Jamboree on the Air / Jamboree on the Internet"
     },
     {
-        date: "2026-10-22",
-        endDate: "2026-10-22",
+        date: "2026-11-05",
+        endDate: "2026-11-05",
         title: "Group AGM",
         type: "Group",
         location: "Ballincollig Scout Hall",
