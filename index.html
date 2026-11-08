@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Home | 49th Cork Ballincollig Scout Group</title>
     <meta name="description" content="49th Cork Ballincollig Scout Group" />
-    <link rel="stylesheet" href="assets/css/style.css?v=10" />
+    <link rel="stylesheet" href="assets/css/style.css?v=11" />
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
     <link rel="apple-touch-icon" href="assets/images/logo.png" />
   </head>
@@ -78,20 +78,31 @@
           </div>
         </div>
       </section>
-      <!-- Open Night announcement: automatically hidden after 17 November 2026 -->
-      <section class="open-night-home" id="open-night-home">
-        <div class="container open-night-home-grid">
-          <a class="open-night-home-image" href="assets/images/web/open-night-flyer.png" target="_blank" rel="noopener noreferrer" aria-label="View the Scouting Open Night flyer full size">
-            <img src="assets/images/web/open-night-flyer.png" alt="Scouting Open Night flyer for Tuesday 17 November 2026, 7:00–8:30 pm at Ballincollig Scout Hall" loading="lazy" />
-          </a>
-          <div class="open-night-home-details">
-            <p class="kicker">Upcoming event</p>
-            <h2>Scouting Open Night</h2>
-            <p>There's more to Scouting than you might think! Discover outdoor adventures, friendships and skills for life.</p>
-            <p><strong>Tuesday, 17 November 2026</strong><br />7:00–8:30 pm<br />Ballincollig Scout Hall, Station Road, P31 EK76</p>
-            <p><strong>Everyone welcome.</strong> No booking needed – just come along!</p>
-            <a class="button" href="events.html">Latest News →</a>
-          </div>
+      <!-- Featured flyers: side by side on desktop, stacked on mobile -->
+      <section class="homepage-flyers" aria-label="Scout Group announcements">
+        <div class="container homepage-flyers-grid">
+          <article class="flyer-card" id="open-night-home">
+            <a href="assets/images/web/open-night-flyer.png" target="_blank" rel="noopener noreferrer" aria-label="View Open Night flyer full size">
+              <img src="assets/images/web/open-night-flyer.png" alt="Scouting Open Night, Tuesday 17 November 2026, 7:00–8:30 pm" loading="lazy" />
+            </a>
+            <div class="flyer-card-content">
+              <p class="kicker">Upcoming event</p>
+              <h2>Scouting Open Night</h2>
+              <p><strong>Tuesday 17 November · 7:00–8:30 pm</strong><br />Ballincollig Scout Hall. Everyone welcome — no booking needed.</p>
+              <a class="button" href="events.html">Latest News →</a>
+            </div>
+          </article>
+          <article class="flyer-card" aria-labelledby="girls-join-title">
+            <a href="assets/images/web/girls-join-flyer.png" target="_blank" rel="noopener noreferrer" aria-label="View girls' recruitment flyer full size">
+              <img src="assets/images/web/girls-join-flyer.png" alt="Girls, your next adventure starts here! Join 49th Cork Ballincollig Scout Group" loading="lazy" />
+            </a>
+            <div class="flyer-card-content">
+              <p class="kicker">Join the adventure</p>
+              <h2 id="girls-join-title">Girls, your next adventure starts here!</h2>
+              <p>Camping, hiking, new friends and skills for life. We'd love to welcome more girls to 49th Cork.</p>
+              <a class="button" href="join.html">Join Us →</a>
+            </div>
+          </article>
         </div>
       </section>
       <section class="social-strip">

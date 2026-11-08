@@ -1911,3 +1911,43 @@ img {
   .open-night-home-grid { grid-template-columns: 1fr; gap: 24px; }
   .open-night-home-image { width: 100%; max-width: 350px; margin: 0 auto; }
 }
+
+/* Homepage Open Night flyer */
+.open-night-home { padding: 48px 0; background: #f5f8f5; }
+.open-night-home-grid { display: grid; grid-template-columns: minmax(0, 350px) minmax(0, 1fr); gap: 44px; align-items: center; }
+.open-night-home-image img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.open-night-home-details h2 { margin: 0 0 20px; }
+.open-night-home-details p { margin: 0 0 20px; line-height: 1.7; }
+@media (max-width: 768px) {
+  .open-night-home { padding: 30px 0; }
+  .open-night-home-grid { grid-template-columns: 1fr; gap: 24px; }
+  .open-night-home-image { width: 100%; max-width: 350px; margin: 0 auto; }
+}
+
+/* Girls' recruitment flyer */
+.girls-join-home { padding: 48px 0; background: #fff; }
+.girls-join-grid { display: grid; grid-template-columns: minmax(0, 350px) minmax(0, 1fr); gap: 44px; align-items: center; }
+.girls-join-image img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.girls-join-details h2 { margin: 0 0 20px; }
+.girls-join-details p { margin: 0 0 20px; line-height: 1.7; }
+@media (max-width: 768px) {
+  .girls-join-home { padding: 30px 0; }
+  .girls-join-grid { grid-template-columns: 1fr; gap: 24px; }
+  .girls-join-image { width: 100%; max-width: 350px; margin: 0 auto; }
+}
+
+/* Homepage flyers: equal-width cards, side by side on desktop */
+.homepage-flyers { padding: 48px 0; background: #f5f8f5; }
+.homepage-flyers-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
+.flyer-card { background: #fff; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 18px rgba(0,0,0,.07); }
+.flyer-card > a { display: block; padding: 18px 18px 0; }
+.flyer-card > a img { display: block; width: 100%; height: 440px; object-fit: contain; }
+.flyer-card-content { padding: 20px 24px 28px; display: flex; flex-direction: column; flex: 1; }
+.flyer-card-content h2 { margin: 0 0 12px; }
+.flyer-card-content p { line-height: 1.6; margin: 0 0 16px; }
+.flyer-card-content .button { align-self: flex-start; margin-top: auto; }
+@media (max-width: 768px) {
+  .homepage-flyers { padding: 28px 0; }
+  .homepage-flyers-grid { grid-template-columns: 1fr; gap: 24px; }
+  .flyer-card > a img { height: auto; max-height: 540px; }
+}
