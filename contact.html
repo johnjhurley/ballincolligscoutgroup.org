@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" type="image/png" href="assets/images/logo.png" />
     <link rel="apple-touch-icon" href="assets/images/logo.png" />
+
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+      async
+      defer>
+    </script>
   </head>
   <body>
     <header class="site-header">
@@ -126,7 +132,10 @@
               Your message has been sent to 49th Cork Ballincollig Scout Group.
             </p>
           </div>
-
+          <div
+            class="cf-turnstile"
+            data-sitekey="0x4AAAAAAF23JcH57x0J3Te-">
+          </div>
           <script>
             (function () {
               const form = document.getElementById("contactForm");
