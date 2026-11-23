@@ -78,5 +78,30 @@ window.groupEvents = [
         type: "Group",
         location: "Ballincollig Scout Den",
         description: "Open Night for new members and parents to learn about the Scout Group and its activities."
+    },
+    {
+        date: "2026-11-26",
+        endDate: "2026-11-26",
+        title: "Ballincollig Leaders Meeting",
+        type: "Group",
+        location: "Ballincollig Scout Den",
+        description: "Meeting for Scout Leaders to discuss upcoming events and activities."
+    }
+    ,
+    {
+        date: "2026-11-28",
+        endDate: "2026-11-29",
+        title: "Scout Section Overnight",
+        type: "Scouts",
+        location: "",
+        description: ""
+    },
+    {
+        date: "2026-12-04",
+        endDate: "2026-12-05",
+        title: "Cub Section Overnight",
+        type: "Cubs",
+        location: "",
+        description: ""
     }
 ];
