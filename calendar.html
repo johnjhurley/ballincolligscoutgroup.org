@@ -110,6 +110,12 @@
           <!-- Generated automatically from event types -->
         </div>
 
+        <section id="nextEvent" aria-live="polite" style="margin:1.5rem 0; padding:1.25rem; border:1px solid #d8e4d8; border-radius:12px; background:#f4f9f4; display:none">
+          <p class="kicker">Up next</p>
+          <h2 id="nextEventTitle" style="margin:.25rem 0"></h2>
+          <p id="nextEventDetails" style="margin:0"></p>
+        </section>
+        <h2>Upcoming events</h2>
         <!-- Calendar -->
 
         <div class="calendar-wrap">
@@ -137,6 +143,16 @@
         <div id="noEvents" style="display: none">
           <p>No upcoming events are currently listed.</p>
         </div>
+        <details id="pastEventsArchive" style="margin:2rem 0">
+          <summary style="cursor:pointer; font-weight:700; font-size:1.2rem">Past events archive (<span id="archiveCount">0</span>)</summary>
+          <div class="calendar-wrap" style="margin-top:1rem">
+            <table class="calendar">
+              <thead><tr><th>Date</th><th>Event</th><th>Type</th><th>Location</th></tr></thead>
+              <tbody id="archiveBody"></tbody>
+            </table>
+          </div>
+          <p id="noArchive" style="display:none">No past events match this filter.</p>
+        </details>
       </div>
     </main>
 
@@ -221,7 +237,7 @@
      events.js MUST load before site.js
      ===================================================== -->
 
-    <script src="assets/js/events.js"></script>
+    <script src="assets/js/events.js?v=20261123"></script>
 
     <script src="assets/js/site.js"></script>
 
@@ -297,14 +313,25 @@
        Render calendar
        ----------------------------------------------------- */
 
-        function renderCalendar(filter = "all") {
-          calendarBody.innerHTML = "";
+        const archiveBody = document.getElementById("archiveBody");
+        const archiveCount = document.getElementById("archiveCount");
+        const noArchive = document.getElementById("noArchive");
+        const nextEvent = document.getElementById("nextEvent");
+        // Compare calendar dates in the visitor's local timezone.
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const eventEnd = (event) => new Date((event.endDate || event.date) + "T00:00:00");
+        const upcoming = events.filter(event => eventEnd(event) >= today);
+        const past = events.filter(event => eventEnd(event) < today).reverse();
+
+        function renderCalendar(filter = "all", source = upcoming, target = calendarBody) {
+          target.innerHTML = "";
 
           let currentMonth = "";
 
           let displayedEvents = 0;
 
-          events.forEach((event) => {
+          source.forEach((event) => {
             const eventType = (event.type || "Group").toLowerCase();
 
             /*
@@ -344,7 +371,7 @@
 
               monthRow.appendChild(monthCell);
 
-              calendarBody.appendChild(monthRow);
+              target.appendChild(monthRow);
 
               currentMonth = monthHeading;
             }
@@ -359,6 +386,15 @@
               month: "short",
             });
 
+            if (event.endDate && event.endDate !== event.date) {
+              const end = new Date(event.endDate + "T00:00:00");
+              if (!Number.isNaN(end.getTime()) && end >= date) {
+                displayDate += " – " + end.toLocaleDateString("en-IE", {
+                  day: "numeric", month: "short",
+                  ...(end.getFullYear() !== date.getFullYear() ? { year: "numeric" } : {})
+                });
+              }
+            }
             if (event.time) {
               displayDate += " · " + event.time;
             }
@@ -426,16 +462,17 @@
             row.appendChild(typeCell);
             row.appendChild(locationCell);
 
-            calendarBody.appendChild(row);
+            target.appendChild(row);
           });
 
           /* ---------------------------------------------
            No events
            --------------------------------------------- */
 
-          if (noEvents) {
+          if (target === calendarBody && noEvents) {
             noEvents.style.display = displayedEvents === 0 ? "block" : "none";
           }
+          return displayedEvents;
         }
 
         /* -----------------------------------------------------
@@ -448,7 +485,7 @@
 
             this.classList.add("active");
 
-            renderCalendar(this.dataset.filter);
+            renderAll(this.dataset.filter);
           });
         });
 
@@ -456,7 +493,25 @@
        Initial calendar
        ----------------------------------------------------- */
 
-        renderCalendar("all");
+        function renderAll(filter = "all") {
+          const matches = upcoming.filter(e => filter === "all" || (e.type || "Group").toLowerCase() === filter);
+          const next = matches[0];
+          nextEvent.style.display = next ? "block" : "none";
+          if (next) {
+            document.getElementById("nextEventTitle").textContent = next.title || "Event";
+            const start = new Date(next.date + "T00:00:00");
+            const end = eventEnd(next);
+            const format = d => d.toLocaleDateString("en-IE", {day:"numeric",month:"long",year:"numeric"});
+            document.getElementById("nextEventDetails").textContent =
+              format(start) + (end > start ? " – " + format(end) : "") +
+              " · " + (next.location || "Location TBC") + " · " + (next.type || "Group");
+          }
+          renderCalendar(filter, upcoming, calendarBody);
+          const count = renderCalendar(filter, past, archiveBody);
+          archiveCount.textContent = count;
+          noArchive.style.display = count ? "none" : "block";
+        }
+        renderAll("all");
       })();
     </script>
   </body>
