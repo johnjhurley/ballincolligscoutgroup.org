@@ -86,8 +86,7 @@ window.groupEvents = [
         type: "Group",
         location: "Ballincollig Scout Den",
         description: "Meeting for Scout Leaders to discuss upcoming events and activities."
-    }
-    ,
+    },
     {
         date: "2026-11-28",
         endDate: "2026-11-29",
